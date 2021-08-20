@@ -9,12 +9,24 @@
 /* Begin PBXBuildFile section */
 		03B8610E26C1E47700DAC12A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8610D26C1E47700DAC12A /* AppDelegate.swift */; };
 		03B8611026C1E47700DAC12A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8610F26C1E47700DAC12A /* SceneDelegate.swift */; };
-		03B8611226C1E47700DAC12A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8611126C1E47700DAC12A /* ViewController.swift */; };
 		03B8611526C1E47700DAC12A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611326C1E47700DAC12A /* Main.storyboard */; };
 		03B8611726C1E47D00DAC12A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611626C1E47D00DAC12A /* Assets.xcassets */; };
 		03B8611A26C1E47D00DAC12A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611826C1E47D00DAC12A /* LaunchScreen.storyboard */; };
 		03B8612526C1E47E00DAC12A /* InsuranceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8612426C1E47E00DAC12A /* InsuranceAppTests.swift */; };
 		03B8613026C1E47E00DAC12A /* InsuranceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8612F26C1E47E00DAC12A /* InsuranceAppUITests.swift */; };
+		3B7648EE26CC956F00C0F52D /* ProfileVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E326CC956D00C0F52D /* ProfileVCExt.swift */; };
+		3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E626CC956E00C0F52D /* LoginCell.swift */; };
+		3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E726CC956E00C0F52D /* LoginVC.swift */; };
+		3B7648F326CC956F00C0F52D /* ProfileCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */; };
+		3B7648F426CC956F00C0F52D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E926CC956E00C0F52D /* ProfileVC.swift */; };
+		3B7648F526CC956F00C0F52D /* LoginVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648EA26CC956E00C0F52D /* LoginVCExt.swift */; };
+		3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */; };
+		3B7648FF26CC975400C0F52D /* pncLogo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B7648FE26CC975400C0F52D /* pncLogo.jpeg */; };
+		3B7749B226CDCD8A00FB85A4 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */; };
+		3B7749B426CDCEF400FB85A4 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749B326CDCEF400FB85A4 /* ProfileEditCell.swift */; };
+		3B7749BA26CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */; };
+		3B7749BC26CEBBA700FB85A4 /* ProfileSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749BB26CEBBA700FB85A4 /* ProfileSections.swift */; };
+		3B7749BE26CED44F00FB85A4 /* StatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749BD26CED44F00FB85A4 /* StatesCell.swift */; };
 		C1031F56F57E726964E781E9 /* Pods_InsuranceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +51,6 @@
 		03B8610A26C1E47700DAC12A /* InsuranceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsuranceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B8610D26C1E47700DAC12A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03B8610F26C1E47700DAC12A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		03B8611126C1E47700DAC12A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03B8611426C1E47700DAC12A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03B8611626C1E47D00DAC12A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03B8611926C1E47D00DAC12A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +62,19 @@
 		03B8612F26C1E47E00DAC12A /* InsuranceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAppUITests.swift; sourceTree = "<group>"; };
 		03B8613126C1E47E00DAC12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		118F46C9B9725988C1B07AA4 /* Pods-InsuranceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.release.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.release.xcconfig"; sourceTree = "<group>"; };
+		3B7648E326CC956D00C0F52D /* ProfileVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVCExt.swift; sourceTree = "<group>"; };
+		3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
+		3B7648E626CC956E00C0F52D /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		3B7648E726CC956E00C0F52D /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardCell.swift; sourceTree = "<group>"; };
+		3B7648E926CC956E00C0F52D /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		3B7648EA26CC956E00C0F52D /* LoginVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVCExt.swift; sourceTree = "<group>"; };
+		3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableItemsExt.swift; sourceTree = "<group>"; };
+		3B7648FE26CC975400C0F52D /* pncLogo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pncLogo.jpeg; sourceTree = "<group>"; };
+		3B7749B326CDCEF400FB85A4 /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
+		3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift"; sourceTree = "<group>"; };
+		3B7749BB26CEBBA700FB85A4 /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
+		3B7749BD26CED44F00FB85A4 /* StatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesCell.swift; sourceTree = "<group>"; };
 		7BBBE4A5CB2DE6C76ECECDEE /* Pods-InsuranceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.debug.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsuranceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,9 +132,13 @@
 			children = (
 				03B8610D26C1E47700DAC12A /* AppDelegate.swift */,
 				03B8610F26C1E47700DAC12A /* SceneDelegate.swift */,
-				03B8611126C1E47700DAC12A /* ViewController.swift */,
+				3B7648FB26CC964900C0F52D /* Model */,
+				3B7648F926CC95F500C0F52D /* Controller */,
+				3B7648FA26CC962000C0F52D /* CustomCell */,
+				3B7648FD26CC968200C0F52D /* Extension */,
 				03B8611326C1E47700DAC12A /* Main.storyboard */,
 				03B8611626C1E47D00DAC12A /* Assets.xcassets */,
+				3B7648FE26CC975400C0F52D /* pncLogo.jpeg */,
 				03B8611826C1E47D00DAC12A /* LaunchScreen.storyboard */,
 				03B8611B26C1E47D00DAC12A /* Info.plist */,
 			);
@@ -120,6 +148,7 @@
 		03B8612326C1E47E00DAC12A /* InsuranceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */,
 				03B8612426C1E47E00DAC12A /* InsuranceAppTests.swift */,
 				03B8612626C1E47E00DAC12A /* Info.plist */,
 			);
@@ -150,6 +179,45 @@
 				F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B7648F926CC95F500C0F52D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B7648E926CC956E00C0F52D /* ProfileVC.swift */,
+				3B7648E726CC956E00C0F52D /* LoginVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B7648FA26CC962000C0F52D /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				3B7749B326CDCEF400FB85A4 /* ProfileEditCell.swift */,
+				3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */,
+				3B7648E626CC956E00C0F52D /* LoginCell.swift */,
+				3B7749BD26CED44F00FB85A4 /* StatesCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		3B7648FB26CC964900C0F52D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */,
+				3B7749BB26CEBBA700FB85A4 /* ProfileSections.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B7648FD26CC968200C0F52D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3B7648E326CC956D00C0F52D /* ProfileVCExt.swift */,
+				3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */,
+				3B7648EA26CC956E00C0F52D /* LoginVCExt.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +327,7 @@
 			files = (
 				03B8611A26C1E47D00DAC12A /* LaunchScreen.storyboard in Resources */,
 				03B8611726C1E47D00DAC12A /* Assets.xcassets in Resources */,
+				3B7648FF26CC975400C0F52D /* pncLogo.jpeg in Resources */,
 				03B8611526C1E47700DAC12A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +395,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B8611226C1E47700DAC12A /* ViewController.swift in Sources */,
+				3B7648F426CC956F00C0F52D /* ProfileVC.swift in Sources */,
+				3B7749BC26CEBBA700FB85A4 /* ProfileSections.swift in Sources */,
+				3B7749BA26CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift in Sources */,
+				3B7749BE26CED44F00FB85A4 /* StatesCell.swift in Sources */,
+				3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */,
+				3B7749B426CDCEF400FB85A4 /* ProfileEditCell.swift in Sources */,
+				3B7648F326CC956F00C0F52D /* ProfileCardCell.swift in Sources */,
+				3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */,
+				3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */,
+				3B7648EE26CC956F00C0F52D /* ProfileVCExt.swift in Sources */,
+				3B7648F526CC956F00C0F52D /* LoginVCExt.swift in Sources */,
 				03B8610E26C1E47700DAC12A /* AppDelegate.swift in Sources */,
 				03B8611026C1E47700DAC12A /* SceneDelegate.swift in Sources */,
 			);
@@ -337,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B8612526C1E47E00DAC12A /* InsuranceAppTests.swift in Sources */,
+				3B7749B226CDCD8A00FB85A4 /* ProfileEditCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
