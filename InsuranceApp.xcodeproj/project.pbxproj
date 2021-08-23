@@ -27,6 +27,12 @@
 		3B7749BA26CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */; };
 		3B7749BC26CEBBA700FB85A4 /* ProfileSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749BB26CEBBA700FB85A4 /* ProfileSections.swift */; };
 		3B7749BE26CED44F00FB85A4 /* StatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749BD26CED44F00FB85A4 /* StatesCell.swift */; };
+		3B7749C126D0A97A00FB85A4 /* LoginNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C026D0A97A00FB85A4 /* LoginNetworkManager.swift */; };
+		3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C226D0B12D00FB85A4 /* LoginModel.swift */; };
+		3B7749C526D168E700FB85A4 /* UserLoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C426D168E700FB85A4 /* UserLoginHandler.swift */; };
+		3B7749C726D1745A00FB85A4 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C626D1745A00FB85A4 /* PersonModel.swift */; };
+		3B7749C926D17D1500FB85A4 /* PersonModelNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C826D17D1500FB85A4 /* PersonModelNetworkManager.swift */; };
+		3B7749CB26D29D9700FB85A4 /* StateNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749CA26D29D9700FB85A4 /* StateNetworkManager.swift */; };
 		C1031F56F57E726964E781E9 /* Pods_InsuranceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +81,13 @@
 		3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift"; sourceTree = "<group>"; };
 		3B7749BB26CEBBA700FB85A4 /* ProfileSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSections.swift; sourceTree = "<group>"; };
 		3B7749BD26CED44F00FB85A4 /* StatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesCell.swift; sourceTree = "<group>"; };
+		3B7749C026D0A97A00FB85A4 /* LoginNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkManager.swift; sourceTree = "<group>"; };
+		3B7749C226D0B12D00FB85A4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		3B7749C426D168E700FB85A4 /* UserLoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginHandler.swift; sourceTree = "<group>"; };
+		3B7749C626D1745A00FB85A4 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		3B7749C826D17D1500FB85A4 /* PersonModelNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModelNetworkManager.swift; sourceTree = "<group>"; };
+		3B7749CA26D29D9700FB85A4 /* StateNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNetworkManager.swift; sourceTree = "<group>"; };
+		3B7749CE26D34D6100FB85A4 /* UserDetailsJSONFormat.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserDetailsJSONFormat.geojson; sourceTree = "<group>"; };
 		7BBBE4A5CB2DE6C76ECECDEE /* Pods-InsuranceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.debug.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsuranceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -132,6 +145,8 @@
 			children = (
 				03B8610D26C1E47700DAC12A /* AppDelegate.swift */,
 				03B8610F26C1E47700DAC12A /* SceneDelegate.swift */,
+				3B7749CE26D34D6100FB85A4 /* UserDetailsJSONFormat.geojson */,
+				3B7749BF26D0A8F800FB85A4 /* Network */,
 				3B7648FB26CC964900C0F52D /* Model */,
 				3B7648F926CC95F500C0F52D /* Controller */,
 				3B7648FA26CC962000C0F52D /* CustomCell */,
@@ -206,6 +221,8 @@
 			children = (
 				3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */,
 				3B7749BB26CEBBA700FB85A4 /* ProfileSections.swift */,
+				3B7749C226D0B12D00FB85A4 /* LoginModel.swift */,
+				3B7749C626D1745A00FB85A4 /* PersonModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,8 +233,19 @@
 				3B7648E326CC956D00C0F52D /* ProfileVCExt.swift */,
 				3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */,
 				3B7648EA26CC956E00C0F52D /* LoginVCExt.swift */,
+				3B7749C426D168E700FB85A4 /* UserLoginHandler.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3B7749BF26D0A8F800FB85A4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3B7749C026D0A97A00FB85A4 /* LoginNetworkManager.swift */,
+				3B7749C826D17D1500FB85A4 /* PersonModelNetworkManager.swift */,
+				3B7749CA26D29D9700FB85A4 /* StateNetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,14 +425,20 @@
 			files = (
 				3B7648F426CC956F00C0F52D /* ProfileVC.swift in Sources */,
 				3B7749BC26CEBBA700FB85A4 /* ProfileSections.swift in Sources */,
+				3B7749CB26D29D9700FB85A4 /* StateNetworkManager.swift in Sources */,
 				3B7749BA26CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift in Sources */,
 				3B7749BE26CED44F00FB85A4 /* StatesCell.swift in Sources */,
 				3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */,
 				3B7749B426CDCEF400FB85A4 /* ProfileEditCell.swift in Sources */,
+				3B7749C126D0A97A00FB85A4 /* LoginNetworkManager.swift in Sources */,
+				3B7749C526D168E700FB85A4 /* UserLoginHandler.swift in Sources */,
 				3B7648F326CC956F00C0F52D /* ProfileCardCell.swift in Sources */,
+				3B7749C926D17D1500FB85A4 /* PersonModelNetworkManager.swift in Sources */,
 				3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */,
 				3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */,
+				3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */,
 				3B7648EE26CC956F00C0F52D /* ProfileVCExt.swift in Sources */,
+				3B7749C726D1745A00FB85A4 /* PersonModel.swift in Sources */,
 				3B7648F526CC956F00C0F52D /* LoginVCExt.swift in Sources */,
 				03B8610E26C1E47700DAC12A /* AppDelegate.swift in Sources */,
 				03B8611026C1E47700DAC12A /* SceneDelegate.swift in Sources */,

@@ -8,10 +8,9 @@
 import UIKit
 
 class LoginCell: UITableViewCell {
-   
+    
     let loginInputTextField = UITextField()
     let loginInputNames = UILabel()
-    
     
     lazy var userIDStackView: UIStackView = {
         let stackView = UIStackView()
@@ -23,7 +22,7 @@ class LoginCell: UITableViewCell {
         
         [self.loginInputNames,self.loginInputTextField].forEach {
             stackView.addArrangedSubview($0)
-
+            
         }
         
         return stackView
@@ -39,21 +38,19 @@ class LoginCell: UITableViewCell {
         configureTheItemsFromExtensions()
         setUpConstraints(for: view)
     }
-   
+    
     
     private func addViews(view: UIView) {
-    
+        
         view.addSubview(userIDStackView)
         contentView.addSubview(view)
     }
     
     
-    
     private func configureTheItemsFromExtensions() {
-       
+        
         loginInputNames.setUpLabel(text: "", textAlignment: .left, heightConstant: 40, widthConstant: 100, fontSize: 18)
         loginInputTextField.setUpTextField(placeholder: "", heightConstant: 40, widthConstant: 250)
-        
     }
     
     
@@ -66,7 +63,7 @@ class LoginCell: UITableViewCell {
         view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
     }
     
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

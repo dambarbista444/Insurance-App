@@ -10,19 +10,20 @@ import UIKit
 
 struct ProfileEditItems {
     var personalInfo: String
-    static let states = ["Pennsylvania", "New York", "Washington"]
+    
 }
 
 struct ProfileModelsData {
     
     static var personalInfos = [
-          
-          ProfileEditItems(personalInfo: "Phone:"),
-          ProfileEditItems(personalInfo: "Email:" ),
-          ProfileEditItems(personalInfo: "Streed Add:"),
-          ProfileEditItems(personalInfo: "Apt/Suite:"),
-          ProfileEditItems(personalInfo: "City:"),
-          ProfileEditItems(personalInfo: "Zip:")
+        
+        ProfileEditItems(personalInfo: "Phone:"),
+        ProfileEditItems(personalInfo: "Email:" ),
+        ProfileEditItems(personalInfo: "Streed Add:"),
+        ProfileEditItems(personalInfo: "Apt/Suite:"),
+        ProfileEditItems(personalInfo: "City:"),
+        ProfileEditItems(personalInfo: "Zip:"),
+        ProfileEditItems(personalInfo: "Country:")
     ]
     
     static func getProfileInfo( for index: Int) -> String {

@@ -23,7 +23,6 @@ class ProfileCardCell: UITableViewCell {
        return imageView
    }()
     
-    
     lazy var nameLabelView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .top
@@ -38,7 +37,6 @@ class ProfileCardCell: UITableViewCell {
         
         return stackView
     }()
-    
     
     lazy var phoneAndEmailView: UIStackView = {
         let stackView = UIStackView()
@@ -55,8 +53,6 @@ class ProfileCardCell: UITableViewCell {
         
         return stackView
     }()
-    
-    
     
     lazy var idAndUserIDView: UIStackView = {
         let stackView = UIStackView()
@@ -76,31 +72,19 @@ class ProfileCardCell: UITableViewCell {
     }()
     
    
-    
-    
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        
-    
         
         let mainView = UIView()
         
         addViews(view: mainView)
-//        contentView.backgroundColor = .blue
-//        mainView.backgroundColor = .red
         setUpConstraints(view: mainView)
-       
-        
+    
         nameLabel.setUpLabel(text: "Dambar Bista", textAlignment: .center, heightConstant: 40, widthConstant: 200, fontSize: 18)
         idLabel.setUpLabel(text: "M000034", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
         userIdlabel.setUpLabel(text: "dambar444", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
         phoneNumberLabel.setUpLabel(text: "444-555-6666", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
         emailLabel.setUpLabel(text: "abc@email.com", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
-        
-        
-        
     }
     
     
@@ -122,7 +106,6 @@ class ProfileCardCell: UITableViewCell {
         view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
-
         nameLabelView.topAnchor.constraint(equalTo: view.topAnchor,constant: 10).isActive = true
         nameLabelView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10).isActive = true
         nameLabelView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -10).isActive = true
@@ -133,7 +116,6 @@ class ProfileCardCell: UITableViewCell {
         profileImageView.trailingAnchor.constraint(equalTo: idAndUserIDView.leadingAnchor,constant: 10).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        
         
         idAndUserIDView.topAnchor.constraint(equalTo: nameLabelView.topAnchor,constant: 10 ).isActive = true
         idAndUserIDView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor,constant: 20).isActive = true
@@ -146,14 +128,6 @@ class ProfileCardCell: UITableViewCell {
         phoneAndEmailView.bottomAnchor.constraint(equalTo: view.bottomAnchor,  constant: -5).isActive = true
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     required init?(coder: NSCoder) {

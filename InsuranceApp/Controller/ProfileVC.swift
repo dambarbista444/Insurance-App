@@ -42,6 +42,7 @@ class ProfileVC: UIViewController {
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(saveProfileItems), for: .touchUpInside)
+        button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -49,20 +50,12 @@ class ProfileVC: UIViewController {
     
     let selectStateLabel = UILabel()
     let stateDropDownButton = UIButton()
-    
-    
-    let selectCountryLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Select Country"
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     var isStateSectionOpen: Bool = true
+    var personResult: PersonResult?
+    var states = [String]()
+    var profileNetworkManager = PersonModelNetworkManager()
+    var stateNetworkManager = StateNetworkManager()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +65,31 @@ class ProfileVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         selectStateLabel.text = "Select States"
-        configureSectionsButtonAction()
+        configurStateDropDownAction(sender: stateDropDownButton)
+        _ =  profileNetworkManager.fetchPersonDetails(completionHandler: ProfileCardAPIHandler())
+        _ = stateNetworkManager.fetchStateData(completaion: stateAPIDataHandler())
+    }
+    
+    /// Passing  API data for profile card
+    private func ProfileCardAPIHandler() -> (PersonResult) -> Void {
+        let handler = { (result: PersonResult) in
+            DispatchQueue.main.async { [self] in
+                personResult = result
+                tableView.reloadData()
+            }
+        }
+        return handler
+    }
+    
+    /// Passing  API data for states dection
+    private func stateAPIDataHandler() -> ([String]) -> Void {
+        let handler = { (result: [String]) in
+            DispatchQueue.main.async { [self] in
+                states = result
+                tableView.reloadData()
+            }
+        }
+        return handler
     }
     
     
@@ -83,23 +100,20 @@ class ProfileVC: UIViewController {
     }
     
     
-    private func configureSectionsButtonAction() {
+    private func configurStateDropDownAction(sender: UIButton) {
         
         stateDropDownButton.addTarget(self, action: #selector(openAndCollapseStateSection), for: .touchUpInside)
     }
     
     /// This method is for open and collapse the state and country sections
     @objc private func openAndCollapseStateSection() {
-       
+        
         isStateSectionOpen = !isStateSectionOpen
-        tableView.beginUpdates()
-        tableView.reloadSections(IndexSet(integer: 2), with: .fade)
-        tableView.endUpdates()
+        tableView.reloadSections(IndexSet(integer: 2), with: .automatic)
     }
     
     /// This method willl navigate to login page
     @objc  private func navigateToLoginVC() {
-        
         print("back")
     }
     
@@ -108,8 +122,34 @@ class ProfileVC: UIViewController {
     @objc private func saveProfileItems() {
         
     }
-
-}
+    
+    
+    private func getPersonFullName() -> String {
+        var fullName = ""
+        if let firstName = personResult?.name.first {
+            if let lastName = personResult?.name.last {
+                fullName =  firstName + lastName
+            }
+        }
+        return fullName
+    }
+    
+    
+    /// Getting Profile Image from json url
+    private func getProfileImage() -> UIImage {
+        
+        var profileImage = UIImage()
+        let picUrl =  personResult?.picture.medium
+        
+        if let urlImage = URL(string: picUrl!) {
+            if let imageData = try? Data(contentsOf: urlImage) {
+                profileImage = UIImage(data: imageData)!
+            }
+        }
+        return profileImage
+    }
+    
+}/// this is a last line of ProfileVC
 
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
@@ -124,16 +164,25 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             return 1
         } else if section == ProfileSections.editProfile {
             return ProfileModelsData.personalInfos.count
-        
+            
         } else  {
-            return isStateSectionOpen ? 0 : 3
+            return isStateSectionOpen ? 0 : states.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard let personResult = personResult else {return UITableViewCell()}
+        
         if indexPath.section == ProfileSections.profileCardSection{
             let profileCell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileCardCell
+            
+            profileCell.emailLabel.text = personResult.email
+            profileCell.nameLabel.text =  getPersonFullName()
+            profileCell.userIdlabel.text = personResult.id.value
+            profileCell.phoneNumberLabel.text = personResult.phone
+            profileCell.profileImageView.image = getProfileImage()
+            
             return profileCell
             
         } else if indexPath.section == ProfileSections.editProfile {
@@ -141,11 +190,40 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             let profileEditCell = tableView.dequeueReusableCell(withIdentifier: "profileEditCell", for: indexPath) as! ProfileEditCell
             profileEditCell.personalInfoNames.text = ProfileModelsData.personalInfos[indexPath.row].personalInfo
             profileEditCell.personalInfoTextField.placeholder = ProfileModelsData.personalInfos[indexPath.row].personalInfo
+            
+            
+            switch indexPath.row {
+            case ProfileEditRow.phone:
+                profileEditCell.personalInfoTextField.text = personResult.phone
+                
+            case ProfileEditRow.email:
+                profileEditCell.personalInfoTextField.text = personResult.email
+                
+            case ProfileEditRow.street:
+                profileEditCell.personalInfoTextField.text = personResult.location.street.name
+                
+            case ProfileEditRow.aptOrSuite:
+                profileEditCell.personalInfoTextField.text = "444"
+                
+            case ProfileEditRow.city:
+                profileEditCell.personalInfoTextField.text = personResult.location.city
+                
+            case ProfileEditRow.zip:
+                profileEditCell.personalInfoTextField.text = (String(describing: personResult.location.postcode))
+                
+            case ProfileEditRow.country:
+                profileEditCell.personalInfoTextField.text = personResult.location.country
+                
+            default:
+                break
+            }
+            
             return profileEditCell
+            
         } else {
             
             let stateCell = tableView.dequeueReusableCell(withIdentifier: "stateCell", for: indexPath) as! StatesCell
-            stateCell.statesNameLabel.text = ProfileEditItems.states[indexPath.row]
+            stateCell.statesNameLabel.text = states[indexPath.row]
             return stateCell
         }
     }
@@ -163,13 +241,13 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.section == 2 {
-            selectStateLabel.text = ProfileEditItems.states[indexPath.row]
+        if indexPath.section == ProfileSections.states {
+            selectStateLabel.text = states[indexPath.row]
         }
         tableView.reloadData()
     }
     
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if section == ProfileSections.profileCardSection  {
@@ -180,8 +258,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             return createSectionViewForProfileCardAndProfileEdit(title: "EDIT INFO")
         } else {
             let stateView = UIView()
-           
-            return  createSectionViewsForStatesAndCountry(sectionTitle: "State", sectionView: stateView, selectLabel: selectStateLabel, dropDownBtn: stateDropDownButton)
+            
+            return  createSectionViewsForStates(sectionTitle: "State", sectionView: stateView, selectStateLabel: selectStateLabel, dropDownBtn: stateDropDownButton)
         }
         
     }
@@ -190,8 +268,5 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
-    
-    
-    
-    
 }
+

@@ -24,7 +24,7 @@ class ProfileEditCell: UITableViewCell {
         
         [self.personalInfoNames,self.personalInfoTextField].forEach {
             stackView.addArrangedSubview($0)
-
+            
         }
         
         return stackView
@@ -40,17 +40,17 @@ class ProfileEditCell: UITableViewCell {
         configureTheItemsFromExtensions()
         setUpConstraints(for: mainView)
     }
-   
+    
     
     private func addViews(view: UIView) {
-    
+        
         view.addSubview(userIDStackView)
         contentView.addSubview(view)
     }
     
     
     private func configureTheItemsFromExtensions() {
-       
+        
         personalInfoNames.setUpLabel(text: "", textAlignment: .left, heightConstant: 40, widthConstant: 100, fontSize: 18)
         personalInfoTextField.setUpTextField(placeholder: "", heightConstant: 40, widthConstant: 250)
         
@@ -66,9 +66,9 @@ class ProfileEditCell: UITableViewCell {
         view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
     }
     
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }

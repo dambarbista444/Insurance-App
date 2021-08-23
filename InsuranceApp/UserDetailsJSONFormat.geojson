@@ -1,0 +1,34 @@
+
+
+
+{
+    "results":
+    [
+        {
+            "name": {
+                "first": "Dambar",
+                "last" : "Bista"
+            },
+            
+            "location": {
+                "street": "Hello world st",
+                "name": "name",
+                "number": "444",
+                "city": "Pittsburgh",
+                "country": "USA"
+            },
+            
+            "email": "abc@email.com",
+            "phone": "444-555-4444",
+            
+            "ID": {
+                "value": "value"
+            },
+            
+            "picture": {
+                "medium": "https://large/image"
+            }
+            
+        }
+    ]
+}

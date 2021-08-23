@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-
+var loadingView: UIView?
 extension ProfileVC {
     
     public func setUPConstrints() {
-    
+        
         tableView.topAnchor.constraint(equalTo:navigationBar.bottomAnchor ,constant: -20).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
@@ -45,7 +45,7 @@ extension ProfileVC  {
     }
     
     
-    func createSectionViewsForStatesAndCountry(sectionTitle: String, sectionView: UIView, selectLabel: UILabel, dropDownBtn: UIButton) -> UIView {
+    func createSectionViewsForStates(sectionTitle: String, sectionView: UIView, selectStateLabel: UILabel, dropDownBtn: UIButton) -> UIView {
         
         let sectionViewWidth = self.view.frame.size.width
         sectionView.frame = CGRect(x: 0, y: 0, width: sectionViewWidth, height: 50)
@@ -53,18 +53,44 @@ extension ProfileVC  {
         let sectionLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 100, height: 30))
         sectionLabel.text = sectionTitle
         
-        selectLabel.frame = CGRect(x: Int(sectionLabel.frame.size.width + 120), y: 0, width: 150, height: 20)
-        selectLabel.text = selectStateLabel.text
-        selectLabel.font = .boldSystemFont(ofSize: 18)
+        selectStateLabel.frame = CGRect(x: Int(sectionLabel.frame.size.width + 120), y: 0, width: 150, height: 20)
+        selectStateLabel.text = selectStateLabel.text
+        selectStateLabel.font = .boldSystemFont(ofSize: 18)
         
         dropDownBtn.frame = CGRect(x: Int(sectionLabel.frame.size.width + 228), y: 0, width: 40, height: 20)
         dropDownBtn.setBackgroundImage(UIImage(systemName: "chevron.down"), for: .normal)
-    
-    
-        sectionView.addSubview(selectLabel)
+        
+        sectionView.addSubview(selectStateLabel)
         sectionView.addSubview(sectionLabel)
         sectionView.addSubview(dropDownBtn)
         
         return sectionView
     }
+    
+    /// These belows methods for loading indicator for show and remoing
+    func showLoadingSpinner(on view: UIView) {
+        
+        let spinnerView = UIView.init(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        spinnerView.backgroundColor = UIColor(red: 0.75, green: 0.92, blue: 0.96, alpha: 1.0)
+        let activityIndicator = UIActivityIndicatorView.init(style: .large)
+        activityIndicator.startAnimating()
+        activityIndicator.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(activityIndicator)
+            view.addSubview(spinnerView)
+        }
+        
+        loadingView = spinnerView
+    }
+    
+    
+    func removeLoadingSpinner() {
+        
+        DispatchQueue.main.async {
+            loadingView?.removeFromSuperview()
+            loadingView = nil
+        }
+    }
+    
 }

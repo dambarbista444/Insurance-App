@@ -7,36 +7,47 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 extension LoginVC {
     
     public func setUpConstrints() {
         
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 30).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        logoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 20).isActive = true
-        logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20.0)
+            make.left.equalTo(view.snp.left).offset(20.0)
+            make.right.equalTo(view.snp.right).offset(-20.0)
+            make.height.equalTo(30)
+        }
         
-        tableView.topAnchor.constraint(equalTo:logoImageView.bottomAnchor ,constant: 20).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        tableView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
-        signInErrorMessageLabel.topAnchor.constraint(equalTo: tableView.bottomAnchor,constant: 20 ).isActive = true
-        signInErrorMessageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        signInErrorMessageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        signInErrorMessageLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        logoImageView.snp.makeConstraints { make in
+            
+            make.top.equalTo(titleLabel.snp.bottom).offset(20.0)
+            make.left.equalTo(view.snp.left).offset(20.0)
+            make.right.equalTo(view.snp.right).offset(-20.0)
+            make.bottom.equalTo(tableView.snp.top).offset(-20)
+        }
         
-        signInButton.topAnchor.constraint(equalTo: signInErrorMessageLabel.bottomAnchor,constant: 20).isActive = true
-        signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        signInButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        signInButton.bottomAnchor.constraint(equalTo: signInButton.bottomAnchor).isActive = true
+        
+        tableView.snp.makeConstraints { make in
+            
+            make.top.equalTo(logoImageView.snp.bottom).offset(20.0)
+            make.left.equalTo(view.snp.left).offset(20.0)
+            make.right.equalTo(view.snp.right).offset(-20.0)
+            make.height.equalTo(110)
+        }
+        
+        
+        signInButton.snp.makeConstraints { make in
+            
+            make.top.equalTo(tableView.snp.bottom).offset(100)
+            make.left.equalTo(view.snp.left).offset(20.0)
+            make.right.equalTo(view.snp.right).offset(-20.0)
+            make.height.equalTo(40)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100)
+        }
     }
     
 }
