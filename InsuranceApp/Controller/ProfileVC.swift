@@ -13,13 +13,12 @@ class ProfileVC: UIViewController {
     let navigationBar: UINavigationBar = {
         
         let navBarWidth = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: navBarWidth.width, height: 100))
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 25, width: navBarWidth.width, height: 100))
+    
         
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward.circle"), style: .plain, target: nil, action:  #selector(navigateToLoginVC))
-        let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward.circle"), style: .plain, target: nil, action:  #selector(navigateToDashbordVC))
         let navItem = UINavigationItem(title: "PROFILE")
         navItem.leftBarButtonItem = backButton
-        navItem.rightBarButtonItem = profileButton
         navBar.setItems([navItem], animated: false)
         
         return navBar
@@ -32,6 +31,7 @@ class ProfileVC: UIViewController {
         table.register(ProfileEditCell.self, forCellReuseIdentifier: "profileEditCell")
         table.register(StatesCell.self, forCellReuseIdentifier: "stateCell")
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.showsVerticalScrollIndicator = false
         return table
     }()
     
@@ -58,6 +58,8 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
         
         view.backgroundColor = .white
         addViews()
@@ -113,8 +115,11 @@ class ProfileVC: UIViewController {
     }
     
     /// This method willl navigate to login page
-    @objc  private func navigateToLoginVC() {
-        print("back")
+    @objc  private func navigateToDashbordVC() {
+        let dashboardVC = DashboardVC()
+        dashboardVC.modalPresentationStyle = .fullScreen
+        dashboardVC.modalTransitionStyle = .flipHorizontal
+        self.present(dashboardVC, animated: true)
     }
     
     
@@ -153,7 +158,7 @@ class ProfileVC: UIViewController {
 
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
-    
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -243,8 +248,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == ProfileSections.states {
             selectStateLabel.text = states[indexPath.row]
+            isStateSectionOpen = !isStateSectionOpen
         }
-        tableView.reloadData()
+        tableView.reloadSections(IndexSet(integer: ProfileSections.states), with: .automatic)
     }
     
     

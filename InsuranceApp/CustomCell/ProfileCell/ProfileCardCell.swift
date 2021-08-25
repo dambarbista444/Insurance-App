@@ -80,11 +80,11 @@ class ProfileCardCell: UITableViewCell {
         addViews(view: mainView)
         setUpConstraints(view: mainView)
     
-        nameLabel.setUpLabel(text: "Dambar Bista", textAlignment: .center, heightConstant: 40, widthConstant: 200, fontSize: 18)
-        idLabel.setUpLabel(text: "M000034", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
-        userIdlabel.setUpLabel(text: "dambar444", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
-        phoneNumberLabel.setUpLabel(text: "444-555-6666", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
-        emailLabel.setUpLabel(text: "abc@email.com", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
+        nameLabel.reuseableLabel(text: "Dambar Bista", textAlignment: .center, heightConstant: 40, widthConstant: 200, fontSize: 18)
+        idLabel.reuseableLabel(text: "M000034", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
+        userIdlabel.reuseableLabel(text: "dambar444", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
+        phoneNumberLabel.reuseableLabel(text: "444-555-6666", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
+        emailLabel.reuseableLabel(text: "abc@email.com", textAlignment: .left, heightConstant: 40, widthConstant: 200, fontSize: 18)
     }
     
     

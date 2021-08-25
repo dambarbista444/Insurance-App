@@ -51,8 +51,8 @@ class ProfileEditCell: UITableViewCell {
     
     private func configureTheItemsFromExtensions() {
         
-        personalInfoNames.setUpLabel(text: "", textAlignment: .left, heightConstant: 40, widthConstant: 100, fontSize: 18)
-        personalInfoTextField.setUpTextField(placeholder: "", heightConstant: 40, widthConstant: 250)
+        personalInfoNames.reuseableLabel(text: "", textAlignment: .left, heightConstant: 40, widthConstant: 100, fontSize: 18)
+        personalInfoTextField.reuseableTextfield(placeholder: "", heightConstant: 40, widthConstant: 250)
         
     }
     

@@ -49,8 +49,8 @@ class LoginCell: UITableViewCell {
     
     private func configureTheItemsFromExtensions() {
         
-        loginInputNames.setUpLabel(text: "", textAlignment: .left, heightConstant: 40, widthConstant: 100, fontSize: 18)
-        loginInputTextField.setUpTextField(placeholder: "", heightConstant: 40, widthConstant: 250)
+        loginInputNames.reuseableLabel(text: "", textAlignment: .left, heightConstant: 40, widthConstant: 100, fontSize: 18)
+        loginInputTextField.reuseableTextfield(placeholder: "", heightConstant: 40, widthConstant: 250)
     }
     
     

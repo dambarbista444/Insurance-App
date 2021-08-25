@@ -11,6 +11,7 @@ import PromiseKit
 
 class LoginVC: UIViewController {
     
+    let logoImageView = UIImageView()
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -20,14 +21,7 @@ class LoginVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    let logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "pncLogo.jpeg")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return imageView
-    }()
+
     
     var tableView: UITableView = {
         let table = UITableView()
@@ -55,6 +49,7 @@ class LoginVC: UIViewController {
         tableView.dataSource = self
         addViews()
         setUpConstrints()
+        configureItemsFromExtesion()
     }
     
     
@@ -66,34 +61,42 @@ class LoginVC: UIViewController {
     }
     
     
+    private func configureItemsFromExtesion() {
+        logoImageView.reuseableImageView(image: UIImage(named: "pncLogo.jpeg")!)
+        
+    }
     // Pulling the login cell rows textfields data to validate the userID and password
     @objc private func validateLoginAndNavigate() {
         
-        let loginNewrok = LoginNetworkManager()
+        let tabBarController = TabBarController()
         let profileVC = ProfileVC()
+        tabBarController.modalPresentationStyle = .fullScreen
+        
+        let loginNewrok = LoginNetworkManager()
+      
         let login =  Login(email: userEmail(), password: userPassword())
-        
-        
+
+
         let personModelNetworkManager = PersonModelNetworkManager()
         let stateNetwork = StateNetworkManager()
-        
-        
+
+
         loginNewrok.fetchRequest(login: login)
             .done { login in
-                
-                self.present(profileVC, animated: true)
+
+                self.present(tabBarController, animated: true)
                 profileVC.showLoadingSpinner(on: profileVC.view) // turn on loading spinner
-                
+
                 firstly {
                     when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
                         /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
                     }),
                     stateNetwork.fetchStateData(completaion: { stateDetails in
-                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that 
+                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
                     }))
                     .done { personReult in
                         profileVC.removeLoadingSpinner() // remove loading spinner
-                        
+
                     }
                 } .catch { error in
                     /// nothing catch for now
@@ -101,6 +104,10 @@ class LoginVC: UIViewController {
             } .catch { [self] error in
                 showLoginErrorAlert()
             }
+
+        
+        
+        //self.present(tabBarController, animated: true)
     }
 }
 

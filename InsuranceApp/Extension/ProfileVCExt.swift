@@ -11,7 +11,7 @@ import UIKit
 var loadingView: UIView?
 extension ProfileVC {
     
-    public func setUPConstrints() {
+    func setUPConstrints() {
         
         tableView.topAnchor.constraint(equalTo:navigationBar.bottomAnchor ,constant: -20).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true

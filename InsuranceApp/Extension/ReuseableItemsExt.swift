@@ -12,7 +12,7 @@ import UIKit
  */
 extension UITextField {
     
-    open func setUpTextField(placeholder text: String, heightConstant: CGFloat, widthConstant: CGFloat) {
+    open func reuseableTextfield(placeholder text: String, heightConstant: CGFloat, widthConstant: CGFloat) {
         
         self.placeholder = text
         self.backgroundColor = .cyan
@@ -26,7 +26,7 @@ extension UITextField {
 
 extension UILabel {
     
-    open func setUpLabel(text: String, textAlignment: NSTextAlignment, heightConstant: CGFloat, widthConstant: CGFloat, fontSize: CGFloat)  {
+    open func reuseableLabel(text: String, textAlignment: NSTextAlignment, heightConstant: CGFloat, widthConstant: CGFloat, fontSize: CGFloat)  {
         
         self.text = text
         self.font = .systemFont(ofSize: fontSize)
@@ -35,5 +35,24 @@ extension UILabel {
         self.widthAnchor.constraint(equalToConstant: widthConstant).isActive = true
         self.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         self.translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
+
+extension UIImageView {
+    
+    open func reuseableImageView(image: UIImage) {
+        self .image = image
+      self.translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
+
+extension UIView {
+    
+    open func reuseableView(height: CGFloat, width: CGFloat, color: UIColor?) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.backgroundColor = color
+        
     }
 }
