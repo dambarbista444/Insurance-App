@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
-class LoginCell: UITableViewCell {
+class LoginCell: UITableViewCell, UITextFieldDelegate {
     
-    let loginInputTextField = UITextField()
+    let loginTextField = UITextField()
     let loginInputNames = UILabel()
     
     lazy var userIDStackView: UIStackView = {
@@ -20,7 +21,7 @@ class LoginCell: UITableViewCell {
         stackView.spacing = 30
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        [self.loginInputNames,self.loginInputTextField].forEach {
+        [self.loginInputNames,self.loginTextField].forEach {
             stackView.addArrangedSubview($0)
             
         }
@@ -37,6 +38,9 @@ class LoginCell: UITableViewCell {
         addViews(view: view)
         configureTheItemsFromExtensions()
         setUpConstraints(for: view)
+        loginTextField.addTarget(self, action: #selector(loginTextFieldBeginEdting(_:)), for: .editingDidBegin)
+        loginTextField.delegate = self
+        
     }
     
     
@@ -50,7 +54,7 @@ class LoginCell: UITableViewCell {
     private func configureTheItemsFromExtensions() {
         
         loginInputNames.reuseableLabel(text: "", textAlignment: .left, heightConstant: 40, widthConstant: 100, fontSize: 18)
-        loginInputTextField.reuseableTextfield(placeholder: "", heightConstant: 40, widthConstant: 250)
+        loginTextField.reuseableTextfield(placeholder: "", heightConstant: 40, widthConstant: 250)
     }
     
     
@@ -68,7 +72,20 @@ class LoginCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    /// Sending the notification to loginVC to make action to moveloginStackViewUpward() method
+    @objc func loginTextFieldBeginEdting(_ textField: UITextField) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "moveloginStackViewUpward"),object: nil)
+    }
+    
+    /// closing the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.contentView.endEditing(true)
+        return false
+    }
+    
 }
+
 
 
 

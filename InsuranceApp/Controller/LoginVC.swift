@@ -8,8 +8,9 @@
 import UIKit
 import Alamofire
 import PromiseKit
+import SnapKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     let logoImageView = UIImageView()
     
@@ -50,64 +51,129 @@ class LoginVC: UIViewController {
         addViews()
         setUpConstrints()
         configureItemsFromExtesion()
+        
+        /// Receiving notification to move up the login stack view by updating bottom constraint
+        NotificationCenter.default.addObserver(self, selector: #selector(moveloginStackViewUpward(_:)), name: Notification.Name(rawValue: "moveloginStackViewUpward"), object: nil)
     }
     
-    
+    //use stack view on this
     private func addViews() {
-        self.view.addSubview(titleLabel)
-        self.view.addSubview(tableView)
-        self.view.addSubview(logoImageView)
-        self.view.addSubview(signInButton)
+        
+        self.view.addSubview(loginStackView)
     }
     
     
+    lazy var loginStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        
+        [self.titleLabel,self.logoImageView, self.tableView, self.signInButton].forEach {
+            stackView.addArrangedSubview($0)
+            
+        }
+        
+        return stackView
+    }()
+  
+     func setUpConstrints() {
+        
+        loginStackView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(view.snp.left).offset(20)
+            make.right.equalTo(view.snp.right).offset(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.height.equalTo(30)
+        }
+        
+        
+        logoImageView.snp.makeConstraints { make in
+         
+            make.height.equalTo(200)
+        }
+        
+        
+        tableView.snp.makeConstraints { make in
+            make.left.equalTo(loginStackView.snp.left)
+            make.right.equalTo(loginStackView.snp.right)
+            make.height.equalTo(110)
+        }
+        
+        
+        signInButton.snp.makeConstraints { make in
+            make.left.equalTo(loginStackView.snp.left)
+            make.right.equalTo(loginStackView.snp.right)
+            make.height.equalTo(40)
+        }
+    }
+    
+    
+    @objc func moveloginStackViewUpward(_ notification: Notification) {
+    
+        loginStackView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(view.snp.left).offset(20)
+            make.right.equalTo(view.snp.right).offset(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-250)
+        }
+     }
+    
+    
+
     private func configureItemsFromExtesion() {
         logoImageView.reuseableImageView(image: UIImage(named: "pncLogo.jpeg")!)
         
     }
     // Pulling the login cell rows textfields data to validate the userID and password
+    //give name login
     @objc private func validateLoginAndNavigate() {
         
-        let tabBarController = TabBarController()
-        let profileVC = ProfileVC()
-        tabBarController.modalPresentationStyle = .fullScreen
-        
-        let loginNewrok = LoginNetworkManager()
-      
-        let login =  Login(email: userEmail(), password: userPassword())
+     let tabBarController = TabBarController()
+//        let profileVC = ProfileVC()
+//        tabBarController.modalPresentationStyle = .fullScreen
+//
+//        let loginNewrok = LoginNetworkManager()
+//
+//        let login =  Login(email: userEmail(), password: userPassword())
+//
+//
+//        let personModelNetworkManager = PersonModelNetworkManager()
+//        let stateNetwork = StateNetworkManager()
+//
+//
+//        loginNewrok.fetchRequest(login: login)
+//
+//
+//            .done { login in
+/////
+//                self.present(tabBarController, animated: true)/// change this to  to dashboard
+//                profileVC.showLoadingSpinner(on: profileVC.view) // turn on loading spinner
+//
+//                firstly {
+//                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
+//                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
+//                    }),
+//                    stateNetwork.fetchStateData(completaion: { stateDetails in
+//                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
+//                    }))
+//                    .done { personReult in
+//                        profileVC.removeLoadingSpinner() // remove loading spinner
+//
+//                    }
+//                } .catch { error in
+//                    /// nothing catch for now
+//                }
+//            } .catch { [self] error in
+//                showLoginErrorAlert()
+//            }
 
-
-        let personModelNetworkManager = PersonModelNetworkManager()
-        let stateNetwork = StateNetworkManager()
-
-
-        loginNewrok.fetchRequest(login: login)
-            .done { login in
-
-                self.present(tabBarController, animated: true)
-                profileVC.showLoadingSpinner(on: profileVC.view) // turn on loading spinner
-
-                firstly {
-                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
-                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-                    }),
-                    stateNetwork.fetchStateData(completaion: { stateDetails in
-                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-                    }))
-                    .done { personReult in
-                        profileVC.removeLoadingSpinner() // remove loading spinner
-
-                    }
-                } .catch { error in
-                    /// nothing catch for now
-                }
-            } .catch { [self] error in
-                showLoginErrorAlert()
-            }
-
-        
-        
-        //self.present(tabBarController, animated: true)
+    
+       
+        self.present(tabBarController, animated: true)
     }
 }
 
@@ -133,11 +199,11 @@ extension LoginVC:  UITableViewDataSource, UITableViewDelegate {
         
         if indexPath.row == 0 {
             loginCell.loginInputNames.text = "User ID"
-            loginCell.loginInputTextField.placeholder = " Enter User ID"
+            loginCell.loginTextField.placeholder = " Enter User ID"
         } else {
             
             loginCell.loginInputNames.text = "Password"
-            loginCell.loginInputTextField.placeholder = " Enter Password "
+            loginCell.loginTextField.placeholder = " Enter Password "
         }
         
         return loginCell
