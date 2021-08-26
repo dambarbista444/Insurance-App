@@ -46,11 +46,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         addViews()
         setUpConstrints()
         configureItemsFromExtesion()
+        navigationController?.isNavigationBarHidden = true
         
         /// Receiving notification to move up the login stack view by updating bottom constraint
         NotificationCenter.default.addObserver(self, selector: #selector(moveloginStackViewUpward(_:)), name: Notification.Name(rawValue: "moveloginStackViewUpward"), object: nil)
@@ -132,26 +134,19 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     //give name login
     @objc private func validateLoginAndNavigate() {
         
-     let tabBarController = TabBarController()
-//        let profileVC = ProfileVC()
-//        tabBarController.modalPresentationStyle = .fullScreen
-//
+
 //        let loginNewrok = LoginNetworkManager()
-//
-//        let login =  Login(email: userEmail(), password: userPassword())
-//
-//
 //        let personModelNetworkManager = PersonModelNetworkManager()
 //        let stateNetwork = StateNetworkManager()
-//
+//        let login =  Login(email: userEmail(), password: userPassword())
 //
 //        loginNewrok.fetchRequest(login: login)
-//
-//
 //            .done { login in
-/////
-//                self.present(tabBarController, animated: true)/// change this to  to dashboard
-//                profileVC.showLoadingSpinner(on: profileVC.view) // turn on loading spinner
+//
+//                let tabBarController = TabBarController()
+//                tabBarController.showLoadingSpinner(on: tabBarController.view)  // turn on loading spinner
+//                self.present(tabBarController, animated: true)
+//
 //
 //                firstly {
 //                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
@@ -161,8 +156,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 //                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
 //                    }))
 //                    .done { personReult in
-//                        profileVC.removeLoadingSpinner() // remove loading spinner
-//
+//                        let tabBarController = TabBarController() // remove loading spinner
+//                        tabBarController.removeLoadingSpinner()
 //                    }
 //                } .catch { error in
 //                    /// nothing catch for now
@@ -170,10 +165,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 //            } .catch { [self] error in
 //                showLoginErrorAlert()
 //            }
-
-    
-       
-        self.present(tabBarController, animated: true)
+        
+        let tabBarController = TabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+        self .navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
 

@@ -10,9 +10,6 @@ import SnapKit
 
 class UpcomingBillCell: UITableViewCell {
     
-    
-    
-    
     let loadingLabel: UILabel = {
         let label = UILabel()
         label.text = "Bills Loading..."

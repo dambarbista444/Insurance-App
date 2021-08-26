@@ -16,7 +16,7 @@ class ProfileVC: UIViewController {
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 25, width: navBarWidth.width, height: 100))
     
         
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward.circle"), style: .plain, target: nil, action:  #selector(navigateToDashbordVC))
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward.circle"), style: .plain, target: nil, action:  #selector(navigateToTabBarController))
         let navItem = UINavigationItem(title: "PROFILE")
         navItem.leftBarButtonItem = backButton
         navBar.setItems([navItem], animated: false)
@@ -58,8 +58,6 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-     
         
         view.backgroundColor = .white
         addViews()
@@ -115,11 +113,10 @@ class ProfileVC: UIViewController {
     }
     
     /// This method willl navigate to login page
-    @objc  private func navigateToDashbordVC() {
-        let dashboardVC = DashboardVC()
-        dashboardVC.modalPresentationStyle = .fullScreen
-        dashboardVC.modalTransitionStyle = .flipHorizontal
-        self.present(dashboardVC, animated: true)
+    @objc  private func navigateToTabBarController() {
+        let tabBarController = TabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(tabBarController, animated: true)
     }
     
     
@@ -258,14 +255,14 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         
         if section == ProfileSections.profileCardSection  {
             
-            return createSectionViewForProfileCardAndProfileEdit(title: "PORFILE & SETTING")
+            return createSectionHeaderViewForProfileCardAndProfileEdit(title: "PORFILE & SETTING")
         } else if section == ProfileSections.editProfile   {
             
-            return createSectionViewForProfileCardAndProfileEdit(title: "EDIT INFO")
+            return createSectionHeaderViewForProfileCardAndProfileEdit(title: "EDIT INFO")
         } else {
             let stateView = UIView()
             
-            return  createSectionViewsForStates(sectionTitle: "State", sectionView: stateView, selectStateLabel: selectStateLabel, dropDownBtn: stateDropDownButton)
+            return  createSectionHeaderViewsForStates(sectionTitle: "State", sectionView: stateView, selectStateLabel: selectStateLabel, dropDownBtn: stateDropDownButton)
         }
         
     }

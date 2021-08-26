@@ -23,6 +23,7 @@ extension ProfileVC {
         saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -20).isActive = true
+        
     }
 }
 
@@ -30,7 +31,7 @@ extension ProfileVC {
 // the useage of button will be drop down the list of states or country rows
 extension ProfileVC  {
     
-    func createSectionViewForProfileCardAndProfileEdit(title: String) -> UIView {
+    func createSectionHeaderViewForProfileCardAndProfileEdit(title: String) -> UIView {
         
         let headerTitleWidth = self.view.frame.width
         let headerTitleLabel = UILabel(frame: CGRect(x: 0, y: 5, width: headerTitleWidth, height: 20))
@@ -45,7 +46,7 @@ extension ProfileVC  {
     }
     
     
-    func createSectionViewsForStates(sectionTitle: String, sectionView: UIView, selectStateLabel: UILabel, dropDownBtn: UIButton) -> UIView {
+    func createSectionHeaderViewsForStates(sectionTitle: String, sectionView: UIView, selectStateLabel: UILabel, dropDownBtn: UIButton) -> UIView {
         
         let sectionViewWidth = self.view.frame.size.width
         sectionView.frame = CGRect(x: 0, y: 0, width: sectionViewWidth, height: 50)
@@ -65,32 +66,6 @@ extension ProfileVC  {
         sectionView.addSubview(dropDownBtn)
         
         return sectionView
-    }
-    
-    /// These belows methods for loading indicator for show and remoing
-    func showLoadingSpinner(on view: UIView) {
-        
-        let spinnerView = UIView.init(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        spinnerView.backgroundColor = UIColor(red: 0.75, green: 0.92, blue: 0.96, alpha: 1.0)
-        let activityIndicator = UIActivityIndicatorView.init(style: .large)
-        activityIndicator.startAnimating()
-        activityIndicator.center = spinnerView.center
-        
-        DispatchQueue.main.async {
-            spinnerView.addSubview(activityIndicator)
-            view.addSubview(spinnerView)
-        }
-        
-        loadingView = spinnerView
-    }
-    
-    
-    func removeLoadingSpinner() {
-        
-        DispatchQueue.main.async {
-            loadingView?.removeFromSuperview()
-            loadingView = nil
-        }
     }
     
 }

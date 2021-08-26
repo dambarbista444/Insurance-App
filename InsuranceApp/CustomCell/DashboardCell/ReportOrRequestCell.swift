@@ -35,12 +35,9 @@ class ReportOrRequestCell: UITableViewCell {
         
         
         let mainView = UIView()
-        
-        
         addViews(view: mainView)
         setUpConstraint(view: mainView)
         configureItemsFromExtension()
-        
     }
     
     
@@ -51,8 +48,8 @@ class ReportOrRequestCell: UITableViewCell {
         forwardArrowImage.reuseableImageView(image: UIImage(systemName: "chevron.forward")!)
         
     }
-   
-
+    
+    
     private func addViews(view: UIView) {
         addSubview(reportOrRequestLablel)
         addSubview(forwardArrowImage)
@@ -67,9 +64,11 @@ class ReportOrRequestCell: UITableViewCell {
         view.frame = contentView.frame
         horizontalView.frame = view.frame
         
-        
-        
-        
+        view.snp.makeConstraints { make in
+            make.right.equalTo(contentView.snp.right).offset(-20)
+            make.left.equalTo(contentView.snp.left).offset(10)
+            
+        }
     }
     
     
@@ -77,5 +76,5 @@ class ReportOrRequestCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
 }
