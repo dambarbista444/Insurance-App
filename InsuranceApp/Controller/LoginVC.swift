@@ -36,7 +36,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         button.setTitle("SIGN IN", for: .normal)
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(validateLoginAndNavigate), for: .touchUpInside)
+        button.addTarget(self, action: #selector(login), for: .touchUpInside)
         button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -130,9 +130,33 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         logoImageView.reuseableImageView(image: UIImage(named: "pncLogo.jpeg")!)
         
     }
+    
+    func userEmail() -> String {
+        
+        let indexPathForUserID = IndexPath(row: 0, section: 0)
+        let userIDCell = tableView.cellForRow(at: indexPathForUserID) as! LoginCell
+        return userIDCell.loginTextField.text!
+    }
+    
+    func userPassword() -> String {
+        
+        let indexPathForPassword = IndexPath(row: 1, section: 0)
+        let passwordCell = tableView.cellForRow(at: indexPathForPassword) as! LoginCell
+        return passwordCell.loginTextField.text!
+    }
+    
+    
+     func showLoginErrorAlert() {
+        
+        let AlertController = UIAlertController(title: "Login Error!", message: "“Unable to retrieve data at this time, please try again after sometime”", preferredStyle: .alert)
+        
+        AlertController.addAction(UIAlertAction(title: "Okay", style: .default))
+        self.present(AlertController, animated: true)
+    }
+
     // Pulling the login cell rows textfields data to validate the userID and password
     //give name login
-    @objc private func validateLoginAndNavigate() {
+    @objc private func login() {
         
 
 //        let loginNewrok = LoginNetworkManager()

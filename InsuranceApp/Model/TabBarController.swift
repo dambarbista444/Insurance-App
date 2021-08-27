@@ -8,6 +8,8 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
+    var loadingView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class TabBarController: UITabBarController {
         let policyVC = PolicyVC()
         policyVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "folder.fill"), tag: 1)
         
-        let fourVC = FourVC()
+        let fourVC = LinkedInVC()
         fourVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "bag.fill"), tag: 2)
         
         let fiveVC = FiveVC()
@@ -56,8 +58,8 @@ class TabBarController: UITabBarController {
     func removeLoadingSpinner() {
         
         DispatchQueue.main.async {
-            loadingView?.removeFromSuperview()
-            loadingView = nil
+            self.loadingView?.removeFromSuperview()
+            self.loadingView = nil
         }
     }
 }

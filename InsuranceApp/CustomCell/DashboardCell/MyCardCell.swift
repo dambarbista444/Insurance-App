@@ -12,7 +12,6 @@ class MyCardCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     
     var myCards = [MyCards]()
     
-    
     let collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -55,7 +54,6 @@ class MyCardCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     private func addViews() {
         contentView.addSubview(collectionView)
         contentView.addSubview(pageController)
-        
     }
     
     

@@ -39,6 +39,22 @@ extension UILabel {
 }
 
 
+extension UILabel {
+    
+    open func reuseableBoldTextLabel(text: String, textAlignment: NSTextAlignment, heightConstant: CGFloat, widthConstant: CGFloat, fontSize: CGFloat)  {
+        
+        self.text = text
+        self.font = .boldSystemFont(ofSize: fontSize)
+        self.textAlignment = textAlignment
+        self.heightAnchor.constraint(equalToConstant: heightConstant).isActive = true
+        self.widthAnchor.constraint(equalToConstant: widthConstant).isActive = true
+        self.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
+
+
 extension UIImageView {
     
     open func reuseableImageView(image: UIImage) {
@@ -54,5 +70,20 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = color
         
+    }
+}
+
+
+extension UIStackView {
+    
+    open func reuseableStackview(axis: NSLayoutConstraint.Axis, alignment: UIStackView.Alignment, distribution: UIStackView.Distribution, spacing: CGFloat, arrangedSubviews: [UIView]) {
+        
+        self.axis = axis
+        self.alignment = alignment
+        self.distribution = distribution
+        self.spacing = spacing
+        self.translatesAutoresizingMaskIntoConstraints = false
+
+        arrangedSubviews.forEach { self.addArrangedSubview($0)}
     }
 }

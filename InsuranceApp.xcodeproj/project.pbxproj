@@ -17,12 +17,14 @@
 		3B12377926D7448B005B8D7C /* AutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12377826D7448B005B8D7C /* AutoCell.swift */; };
 		3B12377B26D75080005B8D7C /* HomeOrRentalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12377A26D75080005B8D7C /* HomeOrRentalCell.swift */; };
 		3B12377D26D7590E005B8D7C /* vehicleImg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B12377C26D7590E005B8D7C /* vehicleImg.jpeg */; };
-		3B7648EE26CC956F00C0F52D /* ProfileVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E326CC956D00C0F52D /* ProfileVCExt.swift */; };
+		3B12377F26D7F5B3005B8D7C /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12377E26D7F5B3005B8D7C /* dots.png */; };
+		3B12378126D7FFE4005B8D7C /* LinkedInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12378026D7FFE4005B8D7C /* LinkedInCell.swift */; };
+		3B12378426D801BD005B8D7C /* black-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12378326D801BD005B8D7C /* black-circle.png */; };
+		3B12378626D8A27B005B8D7C /* swiftLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12378526D8A27B005B8D7C /* swiftLogo.png */; };
 		3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E626CC956E00C0F52D /* LoginCell.swift */; };
 		3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E726CC956E00C0F52D /* LoginVC.swift */; };
 		3B7648F326CC956F00C0F52D /* ProfileCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */; };
 		3B7648F426CC956F00C0F52D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E926CC956E00C0F52D /* ProfileVC.swift */; };
-		3B7648F526CC956F00C0F52D /* LoginVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648EA26CC956E00C0F52D /* LoginVCExt.swift */; };
 		3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */; };
 		3B7648FF26CC975400C0F52D /* pncLogo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B7648FE26CC975400C0F52D /* pncLogo.jpeg */; };
 		3B7749B226CDCD8A00FB85A4 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */; };
@@ -45,7 +47,7 @@
 		3B80CF8126D52B94000590D8 /* MyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80CF8026D52B94000590D8 /* MyCard.swift */; };
 		3B80CF8326D57D02000590D8 /* ContactAgentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80CF8226D57D02000590D8 /* ContactAgentCell.swift */; };
 		3B80CF8526D5860C000590D8 /* agentImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B80CF8426D5860C000590D8 /* agentImg.jpg */; };
-		3BF7F51F26D71F8000A18383 /* FourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F51E26D71F8000A18383 /* FourVC.swift */; };
+		3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */; };
 		3BF7F52126D71FA200A18383 /* FiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F52026D71FA200A18383 /* FiveVC.swift */; };
 		3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F52226D7209C00A18383 /* PolicyVC.swift */; };
 		C1031F56F57E726964E781E9 /* Pods_InsuranceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */; };
@@ -86,13 +88,15 @@
 		3B12377826D7448B005B8D7C /* AutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCell.swift; sourceTree = "<group>"; };
 		3B12377A26D75080005B8D7C /* HomeOrRentalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOrRentalCell.swift; sourceTree = "<group>"; };
 		3B12377C26D7590E005B8D7C /* vehicleImg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vehicleImg.jpeg; sourceTree = "<group>"; };
-		3B7648E326CC956D00C0F52D /* ProfileVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVCExt.swift; sourceTree = "<group>"; };
+		3B12377E26D7F5B3005B8D7C /* dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dots.png; sourceTree = "<group>"; };
+		3B12378026D7FFE4005B8D7C /* LinkedInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInCell.swift; sourceTree = "<group>"; };
+		3B12378326D801BD005B8D7C /* black-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-circle.png"; sourceTree = "<group>"; };
+		3B12378526D8A27B005B8D7C /* swiftLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiftLogo.png; sourceTree = "<group>"; };
 		3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
 		3B7648E626CC956E00C0F52D /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		3B7648E726CC956E00C0F52D /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardCell.swift; sourceTree = "<group>"; };
 		3B7648E926CC956E00C0F52D /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		3B7648EA26CC956E00C0F52D /* LoginVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVCExt.swift; sourceTree = "<group>"; };
 		3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableItemsExt.swift; sourceTree = "<group>"; };
 		3B7648FE26CC975400C0F52D /* pncLogo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pncLogo.jpeg; sourceTree = "<group>"; };
 		3B7749B326CDCEF400FB85A4 /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
@@ -115,7 +119,7 @@
 		3B80CF8026D52B94000590D8 /* MyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCard.swift; sourceTree = "<group>"; };
 		3B80CF8226D57D02000590D8 /* ContactAgentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAgentCell.swift; sourceTree = "<group>"; };
 		3B80CF8426D5860C000590D8 /* agentImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agentImg.jpg; sourceTree = "<group>"; };
-		3BF7F51E26D71F8000A18383 /* FourVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourVC.swift; sourceTree = "<group>"; };
+		3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInVC.swift; sourceTree = "<group>"; };
 		3BF7F52026D71FA200A18383 /* FiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveVC.swift; sourceTree = "<group>"; };
 		3BF7F52226D7209C00A18383 /* PolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyVC.swift; sourceTree = "<group>"; };
 		7BBBE4A5CB2DE6C76ECECDEE /* Pods-InsuranceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.debug.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +240,14 @@
 			path = PolicyCell;
 			sourceTree = "<group>";
 		};
+		3B12378226D7FFED005B8D7C /* LinkedInCell */ = {
+			isa = PBXGroup;
+			children = (
+				3B12378026D7FFE4005B8D7C /* LinkedInCell.swift */,
+			);
+			path = LinkedInCell;
+			sourceTree = "<group>";
+		};
 		3B7648F926CC95F500C0F52D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +255,7 @@
 				3B7749D126D3E9D200FB85A4 /* DashboardVC.swift */,
 				3B7648E926CC956E00C0F52D /* ProfileVC.swift */,
 				3B7648E726CC956E00C0F52D /* LoginVC.swift */,
+				3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */,
 				3BF7F52226D7209C00A18383 /* PolicyVC.swift */,
 			);
 			path = Controller;
@@ -255,6 +268,7 @@
 				3B80CF7826D49087000590D8 /* ProfileCell */,
 				3B80CF7726D49065000590D8 /* DashboardCell */,
 				3B12377726D74421005B8D7C /* PolicyCell */,
+				3B12378226D7FFED005B8D7C /* LinkedInCell */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -274,9 +288,7 @@
 		3B7648FD26CC968200C0F52D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3B7648E326CC956D00C0F52D /* ProfileVCExt.swift */,
 				3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */,
-				3B7648EA26CC956E00C0F52D /* LoginVCExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -294,6 +306,9 @@
 		3B7749D526D3FDB700FB85A4 /* ImagesFiles */ = {
 			isa = PBXGroup;
 			children = (
+				3B12377E26D7F5B3005B8D7C /* dots.png */,
+				3B12378526D8A27B005B8D7C /* swiftLogo.png */,
+				3B12378326D801BD005B8D7C /* black-circle.png */,
 				3B12377C26D7590E005B8D7C /* vehicleImg.jpeg */,
 				3B80CF8426D5860C000590D8 /* agentImg.jpg */,
 				3B7749D626D3FE0100FB85A4 /* billImage.png */,
@@ -335,7 +350,6 @@
 		3BF7F51D26D71F0D00A18383 /* LaterUseVC */ = {
 			isa = PBXGroup;
 			children = (
-				3BF7F51E26D71F8000A18383 /* FourVC.swift */,
 				3BF7F52026D71FA200A18383 /* FiveVC.swift */,
 			);
 			path = LaterUseVC;
@@ -446,7 +460,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B12378626D8A27B005B8D7C /* swiftLogo.png in Resources */,
 				3B12377D26D7590E005B8D7C /* vehicleImg.jpeg in Resources */,
+				3B12378426D801BD005B8D7C /* black-circle.png in Resources */,
+				3B12377F26D7F5B3005B8D7C /* dots.png in Resources */,
 				03B8611A26C1E47D00DAC12A /* LaunchScreen.storyboard in Resources */,
 				3B7749D726D3FE0100FB85A4 /* billImage.png in Resources */,
 				03B8611726C1E47D00DAC12A /* Assets.xcassets in Resources */,
@@ -540,16 +557,15 @@
 				3B7749D026D3DFC500FB85A4 /* TabBarController.swift in Sources */,
 				3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */,
 				3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */,
-				3B7648EE26CC956F00C0F52D /* ProfileVCExt.swift in Sources */,
 				3B7749D226D3E9D200FB85A4 /* DashboardVC.swift in Sources */,
 				3B7749C726D1745A00FB85A4 /* PersonModel.swift in Sources */,
-				3B7648F526CC956F00C0F52D /* LoginVCExt.swift in Sources */,
 				3B80CF7D26D4B318000590D8 /* MyCardCell.swift in Sources */,
-				3BF7F51F26D71F8000A18383 /* FourVC.swift in Sources */,
+				3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */,
 				03B8610E26C1E47700DAC12A /* AppDelegate.swift in Sources */,
 				3B12377926D7448B005B8D7C /* AutoCell.swift in Sources */,
 				3B12377B26D75080005B8D7C /* HomeOrRentalCell.swift in Sources */,
 				03B8611026C1E47700DAC12A /* SceneDelegate.swift in Sources */,
+				3B12378126D7FFE4005B8D7C /* LinkedInCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +744,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -748,6 +765,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
