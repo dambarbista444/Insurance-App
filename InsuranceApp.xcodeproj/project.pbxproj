@@ -21,6 +21,7 @@
 		3B12378126D7FFE4005B8D7C /* LinkedInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12378026D7FFE4005B8D7C /* LinkedInCell.swift */; };
 		3B12378426D801BD005B8D7C /* black-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12378326D801BD005B8D7C /* black-circle.png */; };
 		3B12378626D8A27B005B8D7C /* swiftLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12378526D8A27B005B8D7C /* swiftLogo.png */; };
+		3B2030FA26DE913A003D78FE /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2030F926DE913A003D78FE /* SpinnerView.swift */; };
 		3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E626CC956E00C0F52D /* LoginCell.swift */; };
 		3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E726CC956E00C0F52D /* LoginVC.swift */; };
 		3B7648F326CC956F00C0F52D /* ProfileCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */; };
@@ -47,6 +48,7 @@
 		3B80CF8126D52B94000590D8 /* MyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80CF8026D52B94000590D8 /* MyCard.swift */; };
 		3B80CF8326D57D02000590D8 /* ContactAgentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80CF8226D57D02000590D8 /* ContactAgentCell.swift */; };
 		3B80CF8526D5860C000590D8 /* agentImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B80CF8426D5860C000590D8 /* agentImg.jpg */; };
+		3BC4F05226DE79C500AC3F68 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */; };
 		3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */; };
 		3BF7F52126D71FA200A18383 /* FiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F52026D71FA200A18383 /* FiveVC.swift */; };
 		3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F52226D7209C00A18383 /* PolicyVC.swift */; };
@@ -92,6 +94,7 @@
 		3B12378026D7FFE4005B8D7C /* LinkedInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInCell.swift; sourceTree = "<group>"; };
 		3B12378326D801BD005B8D7C /* black-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-circle.png"; sourceTree = "<group>"; };
 		3B12378526D8A27B005B8D7C /* swiftLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiftLogo.png; sourceTree = "<group>"; };
+		3B2030F926DE913A003D78FE /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
 		3B7648E626CC956E00C0F52D /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		3B7648E726CC956E00C0F52D /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		3B80CF8026D52B94000590D8 /* MyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCard.swift; sourceTree = "<group>"; };
 		3B80CF8226D57D02000590D8 /* ContactAgentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAgentCell.swift; sourceTree = "<group>"; };
 		3B80CF8426D5860C000590D8 /* agentImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agentImg.jpg; sourceTree = "<group>"; };
+		3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInVC.swift; sourceTree = "<group>"; };
 		3BF7F52026D71FA200A18383 /* FiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveVC.swift; sourceTree = "<group>"; };
 		3BF7F52226D7209C00A18383 /* PolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyVC.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				3B7749BF26D0A8F800FB85A4 /* Network */,
 				3B7648FB26CC964900C0F52D /* Model */,
 				3B7648F926CC95F500C0F52D /* Controller */,
+				3BC4F05026DE797900AC3F68 /* ViewModel */,
 				3B7648FA26CC962000C0F52D /* CustomCell */,
 				3B7648FD26CC968200C0F52D /* Extension */,
 				3B7749D526D3FDB700FB85A4 /* ImagesFiles */,
@@ -289,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */,
+				3B2030F926DE913A003D78FE /* SpinnerView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -345,6 +351,14 @@
 				3B7648E626CC956E00C0F52D /* LoginCell.swift */,
 			);
 			path = LoginCell;
+			sourceTree = "<group>";
+		};
+		3BC4F05026DE797900AC3F68 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3BF7F51D26D71F0D00A18383 /* LaterUseVC */ = {
@@ -542,6 +556,7 @@
 				3B7749CB26D29D9700FB85A4 /* StateNetworkManager.swift in Sources */,
 				3B7749BA26CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift in Sources */,
 				3B80CF8326D57D02000590D8 /* ContactAgentCell.swift in Sources */,
+				3B2030FA26DE913A003D78FE /* SpinnerView.swift in Sources */,
 				3B7749BE26CED44F00FB85A4 /* StatesCell.swift in Sources */,
 				3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */,
 				3B7749D926D4136600FB85A4 /* ReportOrRequestCell.swift in Sources */,
@@ -553,6 +568,7 @@
 				3B80CF7F26D4B9D8000590D8 /* MyCardCollectionsViewCill.swift in Sources */,
 				3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */,
 				3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */,
+				3BC4F05226DE79C500AC3F68 /* LoginViewModel.swift in Sources */,
 				3B80CF8126D52B94000590D8 /* MyCard.swift in Sources */,
 				3B7749D026D3DFC500FB85A4 /* TabBarController.swift in Sources */,
 				3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */,

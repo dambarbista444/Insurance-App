@@ -146,7 +146,7 @@ class ProfileVC: UIViewController {
         var fullName = ""
         if let firstName = personResult?.name.first {
             if let lastName = personResult?.name.last {
-                fullName =  firstName + lastName
+                fullName =  firstName + "  " + lastName
             }
         }
         return fullName
@@ -250,7 +250,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == ProfileSections.profileCardSection  {
-            return 160
+            return 180
         } else {
             return 50
         }

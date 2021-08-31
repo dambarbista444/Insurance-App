@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    var loadingView: UIView?
+//    var loadingView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,29 +37,4 @@ class TabBarController: UITabBarController {
         viewControllers = viewControllerList
     }
     
-    
-    func showLoadingSpinner(on view: UIView) {
-        
-        let spinnerView = UIView.init(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        spinnerView.backgroundColor = UIColor(red: 0.75, green: 0.92, blue: 0.96, alpha: 1.0)
-        let activityIndicator = UIActivityIndicatorView.init(style: .large)
-        activityIndicator.startAnimating()
-        activityIndicator.center = spinnerView.center
-        
-        DispatchQueue.main.async {
-            spinnerView.addSubview(activityIndicator)
-            view.addSubview(spinnerView)
-        }
-        
-        loadingView = spinnerView
-    }
-    
-    
-    func removeLoadingSpinner() {
-        
-        DispatchQueue.main.async {
-            self.loadingView?.removeFromSuperview()
-            self.loadingView = nil
-        }
-    }
 }

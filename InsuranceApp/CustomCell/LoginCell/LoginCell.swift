@@ -38,6 +38,7 @@ class LoginCell: UITableViewCell, UITextFieldDelegate {
         addViews(view: view)
         configureTheItemsFromExtensions()
         setUpConstraints(for: view)
+        /// adding target on login textfield to reconize the the touch.
         loginTextField.addTarget(self, action: #selector(loginTextFieldBeginEdting(_:)), for: .editingDidBegin)
         loginTextField.delegate = self
         

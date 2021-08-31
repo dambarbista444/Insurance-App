@@ -12,9 +12,12 @@ import SnapKit
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
-    let logoImageView = UIImageView()
     
-    let titleLabel: UILabel = {
+    
+    // MARK:- Properties
+   private let logoImageView = UIImageView()
+    
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "LOGIN"
         label.font = .boldSystemFont(ofSize: 20)
@@ -24,14 +27,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }()
 
     
-    var tableView: UITableView = {
+    private var tableView: UITableView = {
         let table = UITableView()
         table.register(LoginCell.self, forCellReuseIdentifier: "loginCell")
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
     
-    let signInButton: UIButton = {
+    private let signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("SIGN IN", for: .normal)
         button.backgroundColor = .black
@@ -42,7 +45,24 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         return button
     }()
     
+    private lazy var loginStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        
+        [self.titleLabel,self.logoImageView, self.tableView, self.signInButton].forEach {
+            stackView.addArrangedSubview($0)
+            
+        }
+        
+        return stackView
+    }()
     
+    
+    private let loginViewModel = LoginViewModel()
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,62 +78,15 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(moveloginStackViewUpward(_:)), name: Notification.Name(rawValue: "moveloginStackViewUpward"), object: nil)
     }
     
-    //use stack view on this
+    // MARK:- Add Views
+    
     private func addViews() {
         
         self.view.addSubview(loginStackView)
     }
     
     
-    lazy var loginStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.alignment = .center
-        stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
-        
-        [self.titleLabel,self.logoImageView, self.tableView, self.signInButton].forEach {
-            stackView.addArrangedSubview($0)
-            
-        }
-        
-        return stackView
-    }()
-  
-     func setUpConstrints() {
-        
-        loginStackView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.left.equalTo(view.snp.left).offset(20)
-            make.right.equalTo(view.snp.right).offset(-20)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100)
-        }
-        
-        titleLabel.snp.makeConstraints { make in
-            make.height.equalTo(30)
-        }
-        
-        
-        logoImageView.snp.makeConstraints { make in
-         
-            make.height.equalTo(200)
-        }
-        
-        
-        tableView.snp.makeConstraints { make in
-            make.left.equalTo(loginStackView.snp.left)
-            make.right.equalTo(loginStackView.snp.right)
-            make.height.equalTo(110)
-        }
-        
-        
-        signInButton.snp.makeConstraints { make in
-            make.left.equalTo(loginStackView.snp.left)
-            make.right.equalTo(loginStackView.snp.right)
-            make.height.equalTo(40)
-        }
-    }
-    
-    
+    /// When user touch the loging textfield
     @objc func moveloginStackViewUpward(_ notification: Notification) {
     
         loginStackView.snp.makeConstraints { make in
@@ -131,12 +104,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    
     func userEmail() -> String {
         
         let indexPathForUserID = IndexPath(row: 0, section: 0)
         let userIDCell = tableView.cellForRow(at: indexPathForUserID) as! LoginCell
         return userIDCell.loginTextField.text!
     }
+    
     
     func userPassword() -> String {
         
@@ -145,56 +120,20 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         return passwordCell.loginTextField.text!
     }
     
-    
-     func showLoginErrorAlert() {
-        
-        let AlertController = UIAlertController(title: "Login Error!", message: "“Unable to retrieve data at this time, please try again after sometime”", preferredStyle: .alert)
-        
-        AlertController.addAction(UIAlertAction(title: "Okay", style: .default))
-        self.present(AlertController, animated: true)
-    }
-
-    // Pulling the login cell rows textfields data to validate the userID and password
-    //give name login
+    /// Login Action
     @objc private func login() {
         
-
-//        let loginNewrok = LoginNetworkManager()
-//        let personModelNetworkManager = PersonModelNetworkManager()
-//        let stateNetwork = StateNetworkManager()
-//        let login =  Login(email: userEmail(), password: userPassword())
-//
-//        loginNewrok.fetchRequest(login: login)
-//            .done { login in
-//
-//                let tabBarController = TabBarController()
-//                tabBarController.showLoadingSpinner(on: tabBarController.view)  // turn on loading spinner
-//                self.present(tabBarController, animated: true)
-//
-//
-//                firstly {
-//                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
-//                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-//                    }),
-//                    stateNetwork.fetchStateData(completaion: { stateDetails in
-//                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-//                    }))
-//                    .done { personReult in
-//                        let tabBarController = TabBarController() // remove loading spinner
-//                        tabBarController.removeLoadingSpinner()
-//                    }
-//                } .catch { error in
-//                    /// nothing catch for now
-//                }
-//            } .catch { [self] error in
-//                showLoginErrorAlert()
-//            }
+        loginViewModel.login(with: userEmail(), and: userPassword(), showLoginErrorMessageAt: self)
         
-        let tabBarController = TabBarController()
-        tabBarController.modalPresentationStyle = .fullScreen
-        self .navigationController?.pushViewController(tabBarController, animated: true)
+        // MARK:- This below codes are just use to navigate to second screen without entering email and password everytime while working.
+//        let tabBarController = TabBarController()
+//        tabBarController.modalPresentationStyle = .fullScreen
+//        self .navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
+
+
+// MARK:- TableView DataSource And Delegate
 
 extension LoginVC:  UITableViewDataSource, UITableViewDelegate {
     
@@ -234,5 +173,47 @@ extension LoginVC:  UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+ 
+// MARK:- Constraints
+
+extension LoginVC  {
+    
+    func setUpConstrints() {
+       
+       loginStackView.snp.makeConstraints { make in
+           make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+           make.left.equalTo(view.snp.left).offset(20)
+           make.right.equalTo(view.snp.right).offset(-20)
+           make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100)
+       }
+       
+       titleLabel.snp.makeConstraints { make in
+           make.height.equalTo(30)
+       }
+       
+       logoImageView.snp.makeConstraints { make in
+        
+           make.height.equalTo(200)
+       }
+       
+       
+       tableView.snp.makeConstraints { make in
+           make.left.equalTo(loginStackView.snp.left)
+           make.right.equalTo(loginStackView.snp.right)
+           make.height.equalTo(110)
+       }
+       
+      
+       signInButton.snp.makeConstraints { make in
+           make.left.equalTo(loginStackView.snp.left)
+           make.right.equalTo(loginStackView.snp.right)
+           make.height.equalTo(40)
+       }
+
+    }
+   
+}
+
 
 

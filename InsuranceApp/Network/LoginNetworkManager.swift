@@ -15,7 +15,7 @@ struct LoginNetworkManager {
     
     private let loginUrl = "https://reqres.in/api/login"
     
-    func fetchRequest(login: Login) -> Promise<Login> {
+    func requestLoginValidation(with login: Login) -> Promise<Login> {
         
         return Promise { seal  in
             
