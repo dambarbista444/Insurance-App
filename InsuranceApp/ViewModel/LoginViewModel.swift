@@ -28,7 +28,7 @@ struct LoginViewModel {
                 tabBarController.modalPresentationStyle = .fullScreen
                 loginVC.navigationController?.pushViewController(tabBarController, animated: true)
                 
-                // MARK:- I am commenting out this for now because i had  issue with  internel private methods from state and profile network. And in mean time i couldn't solve this issue. i will fix this later
+                // MARK:- I am commenting out this for now because i had  issue with  internel private methods from state and profile network After updating with module - cocoaPod And in mean time i couldn't solve this issue. i will fix this later
                 
              //   tabBarController.showLoadingSpinner(on: tabBarController.view)  // turn on loading spinner
                 
