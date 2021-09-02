@@ -24,20 +24,12 @@
 		3B2030FA26DE913A003D78FE /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2030F926DE913A003D78FE /* SpinnerView.swift */; };
 		3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E626CC956E00C0F52D /* LoginCell.swift */; };
 		3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E726CC956E00C0F52D /* LoginVC.swift */; };
-		3B7648F326CC956F00C0F52D /* ProfileCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */; };
-		3B7648F426CC956F00C0F52D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E926CC956E00C0F52D /* ProfileVC.swift */; };
 		3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */; };
 		3B7648FF26CC975400C0F52D /* pncLogo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B7648FE26CC975400C0F52D /* pncLogo.jpeg */; };
 		3B7749B226CDCD8A00FB85A4 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */; };
-		3B7749B426CDCEF400FB85A4 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749B326CDCEF400FB85A4 /* ProfileEditCell.swift */; };
-		3B7749BA26CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */; };
 		3B7749BC26CEBBA700FB85A4 /* TVSectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749BB26CEBBA700FB85A4 /* TVSectionsModel.swift */; };
-		3B7749BE26CED44F00FB85A4 /* StatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749BD26CED44F00FB85A4 /* StatesCell.swift */; };
 		3B7749C126D0A97A00FB85A4 /* LoginNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C026D0A97A00FB85A4 /* LoginNetworkManager.swift */; };
 		3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C226D0B12D00FB85A4 /* LoginModel.swift */; };
-		3B7749C726D1745A00FB85A4 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C626D1745A00FB85A4 /* PersonModel.swift */; };
-		3B7749C926D17D1500FB85A4 /* PersonModelNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C826D17D1500FB85A4 /* PersonModelNetworkManager.swift */; };
-		3B7749CB26D29D9700FB85A4 /* StateNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749CA26D29D9700FB85A4 /* StateNetworkManager.swift */; };
 		3B7749D026D3DFC500FB85A4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749CF26D3DFC500FB85A4 /* TabBarController.swift */; };
 		3B7749D226D3E9D200FB85A4 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749D126D3E9D200FB85A4 /* DashboardVC.swift */; };
 		3B7749D726D3FE0100FB85A4 /* billImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7749D626D3FE0100FB85A4 /* billImage.png */; };
@@ -98,19 +90,11 @@
 		3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
 		3B7648E626CC956E00C0F52D /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		3B7648E726CC956E00C0F52D /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardCell.swift; sourceTree = "<group>"; };
-		3B7648E926CC956E00C0F52D /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableItemsExt.swift; sourceTree = "<group>"; };
 		3B7648FE26CC975400C0F52D /* pncLogo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pncLogo.jpeg; sourceTree = "<group>"; };
-		3B7749B326CDCEF400FB85A4 /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
-		3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift"; sourceTree = "<group>"; };
 		3B7749BB26CEBBA700FB85A4 /* TVSectionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSectionsModel.swift; sourceTree = "<group>"; };
-		3B7749BD26CED44F00FB85A4 /* StatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesCell.swift; sourceTree = "<group>"; };
 		3B7749C026D0A97A00FB85A4 /* LoginNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkManager.swift; sourceTree = "<group>"; };
 		3B7749C226D0B12D00FB85A4 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		3B7749C626D1745A00FB85A4 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
-		3B7749C826D17D1500FB85A4 /* PersonModelNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModelNetworkManager.swift; sourceTree = "<group>"; };
-		3B7749CA26D29D9700FB85A4 /* StateNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNetworkManager.swift; sourceTree = "<group>"; };
 		3B7749CE26D34D6100FB85A4 /* UserDetailsJSONFormat.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserDetailsJSONFormat.geojson; sourceTree = "<group>"; };
 		3B7749CF26D3DFC500FB85A4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = InsuranceApp/Model/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		3B7749D126D3E9D200FB85A4 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
@@ -258,7 +242,6 @@
 			children = (
 				3B7749CF26D3DFC500FB85A4 /* TabBarController.swift */,
 				3B7749D126D3E9D200FB85A4 /* DashboardVC.swift */,
-				3B7648E926CC956E00C0F52D /* ProfileVC.swift */,
 				3B7648E726CC956E00C0F52D /* LoginVC.swift */,
 				3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */,
 				3BF7F52226D7209C00A18383 /* PolicyVC.swift */,
@@ -270,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				3B80CF7926D490BE000590D8 /* LoginCell */,
-				3B80CF7826D49087000590D8 /* ProfileCell */,
 				3B80CF7726D49065000590D8 /* DashboardCell */,
 				3B12377726D74421005B8D7C /* PolicyCell */,
 				3B12378226D7FFED005B8D7C /* LinkedInCell */,
@@ -281,10 +263,8 @@
 		3B7648FB26CC964900C0F52D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B7749B926CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift */,
 				3B7749BB26CEBBA700FB85A4 /* TVSectionsModel.swift */,
 				3B7749C226D0B12D00FB85A4 /* LoginModel.swift */,
-				3B7749C626D1745A00FB85A4 /* PersonModel.swift */,
 				3B80CF8026D52B94000590D8 /* MyCard.swift */,
 			);
 			path = Model;
@@ -303,8 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				3B7749C026D0A97A00FB85A4 /* LoginNetworkManager.swift */,
-				3B7749C826D17D1500FB85A4 /* PersonModelNetworkManager.swift */,
-				3B7749CA26D29D9700FB85A4 /* StateNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -333,16 +311,6 @@
 				3B80CF8226D57D02000590D8 /* ContactAgentCell.swift */,
 			);
 			path = DashboardCell;
-			sourceTree = "<group>";
-		};
-		3B80CF7826D49087000590D8 /* ProfileCell */ = {
-			isa = PBXGroup;
-			children = (
-				3B7749BD26CED44F00FB85A4 /* StatesCell.swift */,
-				3B7648E826CC956E00C0F52D /* ProfileCardCell.swift */,
-				3B7749B326CDCEF400FB85A4 /* ProfileEditCell.swift */,
-			);
-			path = ProfileCell;
 			sourceTree = "<group>";
 		};
 		3B80CF7926D490BE000590D8 /* LoginCell */ = {
@@ -550,21 +518,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B7648F426CC956F00C0F52D /* ProfileVC.swift in Sources */,
 				3B7749BC26CEBBA700FB85A4 /* TVSectionsModel.swift in Sources */,
 				3BF7F52126D71FA200A18383 /* FiveVC.swift in Sources */,
-				3B7749CB26D29D9700FB85A4 /* StateNetworkManager.swift in Sources */,
-				3B7749BA26CDD04600FB85A4 /* ProfileEditModel.swift 19-28-21-136.swift 19-31-16-709.swift in Sources */,
 				3B80CF8326D57D02000590D8 /* ContactAgentCell.swift in Sources */,
 				3B2030FA26DE913A003D78FE /* SpinnerView.swift in Sources */,
-				3B7749BE26CED44F00FB85A4 /* StatesCell.swift in Sources */,
 				3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */,
 				3B7749D926D4136600FB85A4 /* ReportOrRequestCell.swift in Sources */,
-				3B7749B426CDCEF400FB85A4 /* ProfileEditCell.swift in Sources */,
 				3B7749C126D0A97A00FB85A4 /* LoginNetworkManager.swift in Sources */,
 				3B80CF7B26D498EA000590D8 /* UpcomingBillCell.swift in Sources */,
-				3B7648F326CC956F00C0F52D /* ProfileCardCell.swift in Sources */,
-				3B7749C926D17D1500FB85A4 /* PersonModelNetworkManager.swift in Sources */,
 				3B80CF7F26D4B9D8000590D8 /* MyCardCollectionsViewCill.swift in Sources */,
 				3B7648F126CC956F00C0F52D /* LoginCell.swift in Sources */,
 				3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */,
@@ -574,7 +535,6 @@
 				3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */,
 				3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */,
 				3B7749D226D3E9D200FB85A4 /* DashboardVC.swift in Sources */,
-				3B7749C726D1745A00FB85A4 /* PersonModel.swift in Sources */,
 				3B80CF7D26D4B318000590D8 /* MyCardCell.swift in Sources */,
 				3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */,
 				03B8610E26C1E47700DAC12A /* AppDelegate.swift in Sources */,

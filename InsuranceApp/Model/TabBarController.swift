@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import Profile
+
 
 class TabBarController: UITabBarController {
     
-//    var loadingView: UIView?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpTabsbarControllers()
+    
     }
     
     
@@ -31,10 +34,13 @@ class TabBarController: UITabBarController {
         
         let fiveVC = FiveVC()
         fiveVC.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "bell.fill"), tag: 3)
-    
+        
         
         let viewControllerList = [dashboardVC, policyVC, fourVC, fiveVC]
         viewControllers = viewControllerList
     }
     
 }
+
+
+

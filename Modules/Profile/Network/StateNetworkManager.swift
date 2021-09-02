@@ -10,7 +10,8 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
-struct StateNetworkManager  {
+public struct StateNetworkManager  {
+    public init() {}
     
     func fetchStateData(completaion: @escaping ([String]) -> Void) ->Promise<[String]> {
         

@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Profile
 
 class DashboardVC: UIViewController {
+    
     
     let reportItems = ["Roadside assistance report", "Report accident"]
     
@@ -72,11 +74,14 @@ class DashboardVC: UIViewController {
         
         let profileVC = ProfileVC()
         profileVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(profileVC, animated: true)
+        
+        present(profileVC, animated: true)
     }
     
 }
 
+
+// MARK:- TableView Datasource and Delegate
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     

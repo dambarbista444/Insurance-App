@@ -10,6 +10,9 @@ import Alamofire
 import PromiseKit
 import SnapKit
 
+
+
+
 class LoginVC: UIViewController, UITextFieldDelegate {
     
     
@@ -123,12 +126,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     /// Login Action
     @objc private func login() {
         
-        loginViewModel.login(with: userEmail(), and: userPassword(), showLoginErrorMessageAt: self)
+      //  loginViewModel.login(with: userEmail(), and: userPassword(), showLoginErrorMessageAt: self)
         
         // MARK:- This below codes are just use to navigate to second screen without entering email and password everytime while working.
-//        let tabBarController = TabBarController()
-//        tabBarController.modalPresentationStyle = .fullScreen
-//        self .navigationController?.pushViewController(tabBarController, animated: true)
+        let tabBarController = TabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+        self .navigationController?.pushViewController(tabBarController, animated: true)
     }
 }
 

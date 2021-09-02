@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (5.4.3)
+  - Profile (0.1.0):
+    - Alamofire (~> 5.2)
+    - PromiseKit (~> 6.8)
+    - SnapKit (~> 5.0.0)
+    - SwiftyJSON (~> 4.0)
   - PromiseKit (6.15.3):
     - PromiseKit/CorePromise (= 6.15.3)
     - PromiseKit/Foundation (= 6.15.3)
@@ -14,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - Profile (from `Modules/Profile`)
   - PromiseKit (~> 6.8)
   - SnapKit (~> 5.0.0)
   - SwiftyJSON (~> 4.0)
@@ -25,12 +31,17 @@ SPEC REPOS:
     - SnapKit
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  Profile:
+    :path: Modules/Profile
+
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Profile: 4497c390ac9e44137f27237c070dbaf836e327e4
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 51cd483ec2e32de4388851a2bec659d8794de59c
+PODFILE CHECKSUM: 0a3cffeaf029913f23f1b93047851d93809733c7
 
 COCOAPODS: 1.10.2

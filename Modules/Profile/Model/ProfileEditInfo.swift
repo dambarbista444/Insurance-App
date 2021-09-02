@@ -1,12 +1,11 @@
 //
-//  LoginModel.swift
-//  iOSTrainingProject2 - Dambar
+//  ProfileEditInfo.swift
+//  Profile
 //
-//  Created by Dambar Bista on 8/15/21.
+//  Created by Dambar Bista on 9/2/21.
 //
 
 import Foundation
-import UIKit
 
 struct ProfileEditItems {
     var personalInfo: String
@@ -30,3 +29,4 @@ struct ProfileModelsData {
         return personalInfos[index].personalInfo
     }
 }
+

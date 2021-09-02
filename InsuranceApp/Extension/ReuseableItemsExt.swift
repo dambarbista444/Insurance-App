@@ -24,9 +24,9 @@ extension UITextField {
 }
 
 
-extension UILabel {
+public extension UILabel {
     
-    open func reuseableLabel(text: String, textAlignment: NSTextAlignment, heightConstant: CGFloat, widthConstant: CGFloat, fontSize: CGFloat)  {
+     func reuseableLabel(text: String, textAlignment: NSTextAlignment, heightConstant: CGFloat, widthConstant: CGFloat, fontSize: CGFloat)  {
         
         self.text = text
         self.font = .systemFont(ofSize: fontSize)

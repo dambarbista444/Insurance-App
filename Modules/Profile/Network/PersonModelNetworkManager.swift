@@ -10,9 +10,11 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
-struct PersonModelNetworkManager {
+public struct PersonModelNetworkManager {
+    public init() {} // making this accesable by other methods/files
     
-    func fetchPersonDetails(completionHandler: @escaping (PersonResult) ->Void)  -> Promise<PersonResult> {
+   func fetchPersonDetails(completionHandler: @escaping (PersonResult) ->Void)  -> Promise<PersonResult> {
+        
         let url = "https://randomuser.me/api/?exc=login,dob,registered,gender,nat,cell,timezone&noinfo"
         
         return Promise { seal in
