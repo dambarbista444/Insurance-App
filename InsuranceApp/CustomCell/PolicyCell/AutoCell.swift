@@ -10,10 +10,10 @@ import UIKit
 class AutoCell: UITableViewCell {
     
     
-    var vehicleImage = UIImageView()
-    var carModel = UILabel()
-    var dateLabel = UILabel()
-    var forwardArrowImage = UIImageView()
+    var vehicleImageView = UIImageView()
+    var vehicleNameLabel = UILabel()
+    var billDateLabel = UILabel()
+    var forwardArrowImageView = UIImageView()
     
     lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -23,7 +23,7 @@ class AutoCell: UITableViewCell {
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        [self.carModel,self.dateLabel ].forEach {
+        [self.vehicleNameLabel,self.billDateLabel ].forEach {
             stackView.addArrangedSubview($0)
             
         }
@@ -38,34 +38,32 @@ class AutoCell: UITableViewCell {
         let mainView = UIView()// view which hold stackview
         addViews(view: mainView)
         setUpConstraints(view: mainView)
-        vehicleImage.layer.cornerRadius = 10
-        vehicleImage.clipsToBounds = true
-        configureItemFromExtension()
+        
+        vehicleImageView.layer.cornerRadius = 10
+        vehicleImageView.clipsToBounds = true
+        
+        vehicleNameLabel.font = .systemFont(ofSize: 20)
+        billDateLabel.font = .systemFont(ofSize: 18)
     }
     
-    
-    private func configureItemFromExtension() {
-        
-        vehicleImage.reuseableImageView(image: UIImage(named: "vehicleImg.jpeg")!)
-        carModel.reuseableLabel(text: "2012 Nissan Altima", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 20)
-        dateLabel.reuseableLabel(text: "Next Billing Date: 08/24/2021", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 16)
-        forwardArrowImage.reuseableImageView(image: UIImage(systemName: "chevron.forward")!)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
     private func addViews(view: UIView) {
         
         
-        contentView.addSubview(vehicleImage)
+        contentView.addSubview(vehicleImageView)
         view.addSubview(verticalStackView)
-        contentView.addSubview(forwardArrowImage)
+        contentView.addSubview(forwardArrowImageView)
         contentView.addSubview(view)
     }
     
     
     private func setUpConstraints(view: UIView) {
         
-        vehicleImage.snp.makeConstraints { make in
+        vehicleImageView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
             make.left.equalTo(contentView.snp.left).offset(10)
             make.height.equalTo(60)
@@ -74,13 +72,13 @@ class AutoCell: UITableViewCell {
         
         view.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
-            make.left.equalTo(vehicleImage.snp.right).offset(10)
-            make.right.equalTo(forwardArrowImage.snp.right).offset(-10)
+            make.left.equalTo(vehicleImageView.snp.right).offset(10)
+            make.right.equalTo(forwardArrowImageView.snp.right).offset(-10)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
         }
         
         
-        forwardArrowImage.snp.makeConstraints { make in
+        forwardArrowImageView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(40)
             make.left.equalTo(view.snp.right).offset(20)
             make.right.equalTo(contentView.snp.right)
@@ -91,7 +89,26 @@ class AutoCell: UITableViewCell {
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func configureCell(with viewModel: AutoTableViewCellConfigurable) {
+        
+        guard let autoItems =  viewModel.autoItems else {return}
+        vehicleNameLabel.text = autoItems.vehicleName
+        vehicleImageView.image = autoItems.vehicleImage
+        billDateLabel.text = autoItems.billingDate
+        forwardArrowImageView.image = autoItems.forwardArrowImage
+    }
+}
+
+
+protocol AutoTableViewCellConfigurable {
+    var autoItems: AutoItems? {get}
+}
+
+class AutoTableViewCellViewModel: AutoTableViewCellConfigurable {
+   
+    var autoItems: AutoItems?
+    
+    init(autoItems: AutoItems?) {
+        self.autoItems = autoItems
     }
 }

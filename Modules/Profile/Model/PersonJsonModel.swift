@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 
 
-struct PersonResult {
+public struct PersonResult {
     let name: Name
     let location: Location
     let email: String

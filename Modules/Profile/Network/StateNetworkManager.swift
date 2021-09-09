@@ -13,7 +13,7 @@ import PromiseKit
 public struct StateNetworkManager  {
     public init() {}
     
-    func fetchStateData(completaion: @escaping ([String]) -> Void) ->Promise<[String]> {
+   public func fetchStateData(completaion: @escaping ([String]) -> Void) ->Promise<[String]> {
         
         return Promise { seal in
             

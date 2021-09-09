@@ -9,7 +9,7 @@ import SnapKit
 
 class ContactAgentCell: UITableViewCell {
     
-    var agentImage = UIImageView()
+    var agentImageView = UIImageView()
     var nameLabel = UILabel()
     var phoneNumLabel = UILabel()
     var emailLabel = UILabel()
@@ -38,24 +38,17 @@ class ContactAgentCell: UITableViewCell {
         let mainView = UIView()// view which hold stackview
         addViews(view: mainView)
         setUpConstraints(view: mainView)
-        agentImage.layer.cornerRadius = 10
-        agentImage.clipsToBounds = true
-        configureItemFromExtension()
+        agentImageView.layer.cornerRadius = 10
+        agentImageView.clipsToBounds = true
     }
     
-    
-    private func configureItemFromExtension() {
-        
-        agentImage.reuseableImageView(image: UIImage(named: "agentImg.jpg")!)
-        nameLabel.reuseableLabel(text: "Joe Biden", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 18)
-        emailLabel.reuseableLabel(text: "joebiden@email.com", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 18)
-        
-        phoneNumLabel.reuseableLabel(text: "Phone: 444-444-4444", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 18)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    
+
     private func addViews(view: UIView) {
-        contentView.addSubview(agentImage)
+        contentView.addSubview(agentImageView)
         view.addSubview(verticalStackView)
         contentView.addSubview(view)
         
@@ -64,7 +57,7 @@ class ContactAgentCell: UITableViewCell {
     
     private func setUpConstraints(view: UIView) {
         
-        agentImage.snp.makeConstraints { make in
+        agentImageView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
             make.left.equalTo(contentView.snp.left).offset(20)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
@@ -74,7 +67,7 @@ class ContactAgentCell: UITableViewCell {
         
         view.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
-            make.left.equalTo(agentImage.snp.right).offset(20)
+            make.left.equalTo(agentImageView.snp.right).offset(20)
             make.right.equalTo(contentView.snp.right).offset(-20)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
         }
@@ -83,8 +76,32 @@ class ContactAgentCell: UITableViewCell {
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func configureCell(with viewModel: ContactAgentTableViewCellConfigurable) {
+        
+        guard let contactAgentItems = viewModel.contactAgentItems else { return }
+        nameLabel.text = contactAgentItems.name
+        emailLabel.text = contactAgentItems.email
+        phoneNumLabel.text = contactAgentItems.phone
+        agentImageView.image = contactAgentItems.agentImage
     }
+
+}
+
+
+// MARK:- Protocols
+
+protocol ContactAgentTableViewCellConfigurable {
+    var contactAgentItems: ContactAgentItems? { get }
+}
+
+
+// MARK:- View Model
+
+class ContactAgentTableViewCellViewModel: ContactAgentTableViewCellConfigurable {
+   
+    var contactAgentItems: ContactAgentItems?
     
+    init(contactAgentItems: ContactAgentItems) {
+        self.contactAgentItems = contactAgentItems
+    }
 }

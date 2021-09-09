@@ -27,25 +27,23 @@ struct LoginViewModel {
                 
                 tabBarController.modalPresentationStyle = .fullScreen
                 loginVC.navigationController?.pushViewController(tabBarController, animated: true)
+        
+                tabBarController.showLoadingSpinner(on: tabBarController.view)  // turn on loading spinner
                 
-                // MARK:- I am commenting out this for now because i had  issue with  internel private methods from state and profile network After updating with module - cocoaPod And in mean time i couldn't solve this issue. i will fix this later
-                
-             //   tabBarController.showLoadingSpinner(on: tabBarController.view)  // turn on loading spinner
-                
-//                firstly {
-//                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
-//                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-//                    }),
-//                    stateNetwork.fetchStateData(completaion: { stateDetails in
-//                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-//                    }))
-//                    .done { personReult in
-//
-//                        TabBarController.removeLoadingSpinner()  // remove loading spinner
-//                    }
-//                } .catch { error in
-//                    /// nothing catch for now
-//                }
+                firstly {
+                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
+                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
+                    }),
+                    stateNetwork.fetchStateData(completaion: { stateDetails in
+                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
+                    }))
+                    .done { personReult in
+
+                        TabBarController.removeLoadingSpinner()  // remove loading spinner
+                    }
+                } .catch { error in
+                    /// nothing catch for now
+                }
             } .catch { error in
                 showLoginErrorAlert(on: loginVC)
             }

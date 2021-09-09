@@ -103,11 +103,11 @@ class MyCardCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
         self.pageController.currentPage = Int(roundIndex)
     }
     
-
-    
-    
-    
-    
-    
-    
 }
+
+// MARK:- Protocols
+protocol MyCardsTableViewCellConfigurable {}
+
+
+// MARK:- View model
+class MyCardsTableViewCellViewModel: MyCardsTableViewCellConfigurable {}

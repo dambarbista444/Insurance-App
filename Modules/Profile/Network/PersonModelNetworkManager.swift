@@ -13,7 +13,7 @@ import PromiseKit
 public struct PersonModelNetworkManager {
     public init() {} // making this accesable by other methods/files
     
-   func fetchPersonDetails(completionHandler: @escaping (PersonResult) ->Void)  -> Promise<PersonResult> {
+   public func fetchPersonDetails(completionHandler: @escaping (PersonResult) ->Void)  -> Promise<PersonResult> {
         
         let url = "https://randomuser.me/api/?exc=login,dob,registered,gender,nat,cell,timezone&noinfo"
         

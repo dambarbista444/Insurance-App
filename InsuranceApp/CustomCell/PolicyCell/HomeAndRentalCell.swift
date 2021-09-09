@@ -7,12 +7,12 @@
 
 import UIKit
 
-class HomeOrRentalCell: UITableViewCell {
+class HomeAndRentalCell: UITableViewCell {
     
-    var addressLabel = UILabel()
-    var rentalLabel = UILabel()
-    var policyLabel = UILabel()
-    var forwardArrowImage = UIImageView()
+    var streetNameLabel = UILabel()
+    var homeTypeLabel = UILabel()
+    var policyEndDateLabel = UILabel()
+    var forwardArrowImageView = UIImageView()
     
     lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -22,7 +22,7 @@ class HomeOrRentalCell: UITableViewCell {
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        [self.addressLabel, self.rentalLabel, self.policyLabel ].forEach {
+        [self.streetNameLabel, self.homeTypeLabel, self.policyEndDateLabel ].forEach {
             stackView.addArrangedSubview($0)
             
         }
@@ -37,27 +37,24 @@ class HomeOrRentalCell: UITableViewCell {
         let mainView = UIView()// view which hold stackview
         addViews(view: mainView)
         setUpConstraints(view: mainView)
-        configureItemFromExtension()
-    }
     
-    
-    private func configureItemFromExtension() {
         
-       
-        addressLabel.reuseableLabel(text: "7000 Christopher Dr", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 20)
-        rentalLabel.reuseableLabel(text: "Rental", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 20)
-        policyLabel.reuseableLabel(text: "Policy End Date: 09/13/2021", textAlignment: .left, heightConstant: 20, widthConstant: contentView.frame.width - 40, fontSize: 20)
-
-        forwardArrowImage.reuseableImageView(image: UIImage(systemName: "chevron.forward")!)
+        streetNameLabel.font = .systemFont(ofSize: 20)
+        homeTypeLabel.font = .systemFont(ofSize: 18)
+        policyEndDateLabel.font = .systemFont(ofSize: 18)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+
+
     private func addViews(view: UIView) {
         
         view.addSubview(verticalStackView)
-        contentView.addSubview(forwardArrowImage)
+        contentView.addSubview(forwardArrowImageView)
         contentView.addSubview(view)
-        
     }
     
     
@@ -67,12 +64,12 @@ class HomeOrRentalCell: UITableViewCell {
         view.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
             make.left.equalTo(contentView.snp.left).offset(10)
-            make.right.equalTo(forwardArrowImage.snp.right).offset(-10)
+            make.right.equalTo(forwardArrowImageView.snp.right).offset(-10)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
         }
         
         
-        forwardArrowImage.snp.makeConstraints { make in
+        forwardArrowImageView.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(40)
             make.left.equalTo(view.snp.right).offset(20)
             make.right.equalTo(contentView.snp.right)
@@ -83,8 +80,30 @@ class HomeOrRentalCell: UITableViewCell {
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func configureCell(with viewModel: HomeAndRentalTableViewCellConfigurable) {
+        guard let homeAndRentalItems = viewModel.homeAndRentalItems else {return}
+        
+        streetNameLabel.text = homeAndRentalItems.streetName
+        homeTypeLabel.text = homeAndRentalItems.homeType
+        policyEndDateLabel.text = homeAndRentalItems.policyEndDate
+        forwardArrowImageView.image = homeAndRentalItems.forwardArrowImage
     }
+    
+}
 
+
+// MARK:- Protocols
+protocol HomeAndRentalTableViewCellConfigurable {
+    var homeAndRentalItems: HomeAndRentalItems? { get }
+}
+
+
+// MARK:- ViewModel
+class HomeAndRentalTableViewCellViewModel: HomeAndRentalTableViewCellConfigurable {
+    var homeAndRentalItems: HomeAndRentalItems?
+    
+    init(homeAndRentalItems: HomeAndRentalItems) {
+        self.homeAndRentalItems = homeAndRentalItems
+    }
+    
 }

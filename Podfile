@@ -8,4 +8,5 @@ target "InsuranceApp" do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SnapKit', '~> 5.0.0'
   pod("Profile", path: "Modules/Profile")
+  pod("Quotes", path: "Modules/Quotes")
 end

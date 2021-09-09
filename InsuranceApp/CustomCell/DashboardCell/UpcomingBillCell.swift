@@ -12,7 +12,6 @@ class UpcomingBillCell: UITableViewCell {
     
     let loadingLabel: UILabel = {
         let label = UILabel()
-        label.text = "Bills Loading..."
         label.font = .boldSystemFont(ofSize: 20)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +29,11 @@ class UpcomingBillCell: UITableViewCell {
     }
     
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     private func addViews() {
         contentView.addSubview(loadingLabel)
     }
@@ -42,8 +46,31 @@ class UpcomingBillCell: UITableViewCell {
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    func configureCell(with viewModel: UpcomingBillTableViewCellConfigurable) {
+        guard let billItems = viewModel.billItems else { return }
+        loadingLabel.text = billItems.status
     }
     
+   
+    
+}
+
+
+// MARK:- Protocols
+
+protocol UpcomingBillTableViewCellConfigurable {
+    var billItems: UpComingBillItems? { get }
+}
+
+
+// MARK:- View Model
+
+class UpcomingBillTableViewCellViewModel: UpcomingBillTableViewCellConfigurable {
+   
+    var billItems: UpComingBillItems?
+    
+    init(billItems: UpComingBillItems?) {
+        self.billItems = billItems
+    }
 }

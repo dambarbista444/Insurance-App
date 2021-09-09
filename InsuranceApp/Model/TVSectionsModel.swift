@@ -8,22 +8,13 @@
 import Foundation
 
 
-struct DashboardSection {
+struct DashboardSectionss {
     
     static let upComingBill     = 0
     static let myCards          = 1
     static let reportOrRequest  = 2
     static let  contactAgent    = 3
 }
-
-
-struct PolicySection {
-    
-    static let auto         = 0
-    static let HomeOrRental = 1
-    static let documents    = 2
-}
-
 
 
 struct LinkedIn {
