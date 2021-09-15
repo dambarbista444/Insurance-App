@@ -107,7 +107,6 @@ class LinkedInCell: UITableViewCell {
         lowerHorizontalStackView.addSubview(commentIconStackView)
         lowerHorizontalStackView.addSubview(shareIconStackView)
         lowerHorizontalStackView.addSubview(sendIconStackView)
-        
     }
     
     

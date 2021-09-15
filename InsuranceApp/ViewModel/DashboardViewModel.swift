@@ -58,7 +58,6 @@ class DashboardViewModel: DashboardViewConfigurable {
         sections.append(DashboardSection.myCardsRow(myCardsRows))
         
         /// Report And request
-        
         if let reportItems = dashboardData?.reportItems {
             reportAndRequestRows.append(DashboardRow.reportAndRequestRow(ReportAndRequestTableViewCellViewModel(reportAndRequestItems: reportItems)))
         }
@@ -72,7 +71,6 @@ class DashboardViewModel: DashboardViewConfigurable {
         
         
         /// Contact Agent
-        
         if let contactAgentItems = dashboardData?.contactAgentItems {
             contactAgentItemsRows.append(DashboardRow.contactAgentRow(ContactAgentTableViewCellViewModel(contactAgentItems: contactAgentItems)))
             

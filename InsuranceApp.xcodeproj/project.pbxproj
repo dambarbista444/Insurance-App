@@ -12,7 +12,6 @@
 		03B8611526C1E47700DAC12A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611326C1E47700DAC12A /* Main.storyboard */; };
 		03B8611726C1E47D00DAC12A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611626C1E47D00DAC12A /* Assets.xcassets */; };
 		03B8611A26C1E47D00DAC12A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611826C1E47D00DAC12A /* LaunchScreen.storyboard */; };
-		03B8612526C1E47E00DAC12A /* InsuranceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8612426C1E47E00DAC12A /* InsuranceAppTests.swift */; };
 		03B8613026C1E47E00DAC12A /* InsuranceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8612F26C1E47E00DAC12A /* InsuranceAppUITests.swift */; };
 		3B12377926D7448B005B8D7C /* AutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12377826D7448B005B8D7C /* AutoCell.swift */; };
 		3B12377B26D75080005B8D7C /* HomeAndRentalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12377A26D75080005B8D7C /* HomeAndRentalCell.swift */; };
@@ -26,8 +25,6 @@
 		3B5FCFE926E4646700138B1D /* PolicyTVCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFE826E4646700138B1D /* PolicyTVCellModel.swift */; };
 		3B5FCFEC26E46D0300138B1D /* PolicyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFEB26E46D0300138B1D /* PolicyDataProvider.swift */; };
 		3B5FCFEE26E46DEE00138B1D /* PolicyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFED26E46DEE00138B1D /* PolicyData.swift */; };
-		3B5FCFF126E511DE00138B1D /* ReuseableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFF026E511DE00138B1D /* ReuseableViewProtocol.swift */; };
-		3B5FCFF326E5136900138B1D /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFF226E5136900138B1D /* UITableViewExtension.swift */; };
 		3B5FCFF726E5A00D00138B1D /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFF626E5A00D00138B1D /* DocumentsTableViewCell.swift */; };
 		3B5FCFF926E5CE6F00138B1D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFF826E5CE6F00138B1D /* DashboardViewModel.swift */; };
 		3B5FCFFB26E5CE9B00138B1D /* DashboardDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFFA26E5CE9B00138B1D /* DashboardDataProvider.swift */; };
@@ -37,7 +34,6 @@
 		3B7648F226CC956F00C0F52D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E726CC956E00C0F52D /* LoginVC.swift */; };
 		3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */; };
 		3B7648FF26CC975400C0F52D /* pncLogo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B7648FE26CC975400C0F52D /* pncLogo.jpeg */; };
-		3B7749B226CDCD8A00FB85A4 /* ProfileEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */; };
 		3B7749BC26CEBBA700FB85A4 /* TVSectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749BB26CEBBA700FB85A4 /* TVSectionsModel.swift */; };
 		3B7749C126D0A97A00FB85A4 /* LoginNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C026D0A97A00FB85A4 /* LoginNetworkManager.swift */; };
 		3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7749C226D0B12D00FB85A4 /* LoginModel.swift */; };
@@ -51,10 +47,13 @@
 		3B80CF8126D52B94000590D8 /* MyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80CF8026D52B94000590D8 /* MyCard.swift */; };
 		3B80CF8326D57D02000590D8 /* ContactAgentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B80CF8226D57D02000590D8 /* ContactAgentCell.swift */; };
 		3B80CF8526D5860C000590D8 /* agentImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B80CF8426D5860C000590D8 /* agentImg.jpg */; };
+		3BBB879926F18C2C00AF3965 /* vehicleInsurance.html in Resources */ = {isa = PBXBuildFile; fileRef = 3BBB879826F18C2C00AF3965 /* vehicleInsurance.html */; };
 		3BC4F05226DE79C500AC3F68 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */; };
+		3BEEBB7E26EA618900588A85 /* LoginVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEEBB7D26EA618900588A85 /* LoginVCTests.swift */; };
 		3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */; };
 		3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F52226D7209C00A18383 /* PolicyVC.swift */; };
-		C1031F56F57E726964E781E9 /* Pods_InsuranceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */; };
+		AC9CE481046CD042CCABCDED /* Pods_InsuranceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA51C48B865D3EB2DC31D80C /* Pods_InsuranceApp.framework */; };
+		F01F44F9F26E254667EA6A91 /* Pods_InsuranceApp_InsuranceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2087F372FBB515A7BC08142 /* Pods_InsuranceApp_InsuranceAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,12 +82,10 @@
 		03B8611926C1E47D00DAC12A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03B8611B26C1E47D00DAC12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03B8612026C1E47E00DAC12A /* InsuranceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsuranceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03B8612426C1E47E00DAC12A /* InsuranceAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAppTests.swift; sourceTree = "<group>"; };
 		03B8612626C1E47E00DAC12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03B8612B26C1E47E00DAC12A /* InsuranceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsuranceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B8612F26C1E47E00DAC12A /* InsuranceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAppUITests.swift; sourceTree = "<group>"; };
 		03B8613126C1E47E00DAC12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		118F46C9B9725988C1B07AA4 /* Pods-InsuranceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.release.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.release.xcconfig"; sourceTree = "<group>"; };
 		3B12377826D7448B005B8D7C /* AutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCell.swift; sourceTree = "<group>"; };
 		3B12377A26D75080005B8D7C /* HomeAndRentalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndRentalCell.swift; sourceTree = "<group>"; };
 		3B12377C26D7590E005B8D7C /* vehicleImg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vehicleImg.jpeg; sourceTree = "<group>"; };
@@ -101,14 +98,11 @@
 		3B5FCFE826E4646700138B1D /* PolicyTVCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyTVCellModel.swift; sourceTree = "<group>"; };
 		3B5FCFEB26E46D0300138B1D /* PolicyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDataProvider.swift; sourceTree = "<group>"; };
 		3B5FCFED26E46DEE00138B1D /* PolicyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyData.swift; sourceTree = "<group>"; };
-		3B5FCFF026E511DE00138B1D /* ReuseableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableViewProtocol.swift; sourceTree = "<group>"; };
-		3B5FCFF226E5136900138B1D /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		3B5FCFF626E5A00D00138B1D /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		3B5FCFF826E5CE6F00138B1D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3B5FCFFA26E5CE9B00138B1D /* DashboardDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDataProvider.swift; sourceTree = "<group>"; };
 		3B5FCFFC26E5CED300138B1D /* DashboardTVCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTVCellModel.swift; sourceTree = "<group>"; };
 		3B5FCFFE26E5D0A200138B1D /* DashboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardData.swift; sourceTree = "<group>"; };
-		3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditCell.swift; sourceTree = "<group>"; };
 		3B7648E626CC956E00C0F52D /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		3B7648E726CC956E00C0F52D /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableItemsExt.swift; sourceTree = "<group>"; };
@@ -127,11 +121,18 @@
 		3B80CF8026D52B94000590D8 /* MyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCard.swift; sourceTree = "<group>"; };
 		3B80CF8226D57D02000590D8 /* ContactAgentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAgentCell.swift; sourceTree = "<group>"; };
 		3B80CF8426D5860C000590D8 /* agentImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agentImg.jpg; sourceTree = "<group>"; };
+		3BBB879826F18C2C00AF3965 /* vehicleInsurance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = vehicleInsurance.html; sourceTree = "<group>"; };
 		3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3BEEBB7D26EA618900588A85 /* LoginVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCTests.swift; sourceTree = "<group>"; };
 		3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInVC.swift; sourceTree = "<group>"; };
 		3BF7F52226D7209C00A18383 /* PolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyVC.swift; sourceTree = "<group>"; };
-		7BBBE4A5CB2DE6C76ECECDEE /* Pods-InsuranceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.debug.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsuranceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BFE5BC026F21A150051F10D /* TableViewReuseableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TableViewReuseableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0B679F2B5B6C7CF6A84A25 /* Pods-InsuranceApp-InsuranceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp-InsuranceAppTests.release.xcconfig"; path = "Target Support Files/Pods-InsuranceApp-InsuranceAppTests/Pods-InsuranceApp-InsuranceAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		57E2401BB3AFFC909AA271E2 /* Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InsuranceApp-InsuranceAppTests/Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8831BED3D7AB4C9647C79EB1 /* Pods-InsuranceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.debug.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9EFE30222AF8246A831E686F /* Pods-InsuranceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp.release.xcconfig"; path = "Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp.release.xcconfig"; sourceTree = "<group>"; };
+		C2087F372FBB515A7BC08142 /* Pods_InsuranceApp_InsuranceAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsuranceApp_InsuranceAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA51C48B865D3EB2DC31D80C /* Pods_InsuranceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsuranceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1031F56F57E726964E781E9 /* Pods_InsuranceApp.framework in Frameworks */,
+				AC9CE481046CD042CCABCDED /* Pods_InsuranceApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F01F44F9F26E254667EA6A91 /* Pods_InsuranceApp_InsuranceAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +187,7 @@
 		03B8610C26C1E47700DAC12A /* InsuranceApp */ = {
 			isa = PBXGroup;
 			children = (
+				3BBB879826F18C2C00AF3965 /* vehicleInsurance.html */,
 				03B8610D26C1E47700DAC12A /* AppDelegate.swift */,
 				03B8610F26C1E47700DAC12A /* SceneDelegate.swift */,
 				3B7749CE26D34D6100FB85A4 /* UserDetailsJSONFormat.geojson */,
@@ -194,7 +197,6 @@
 				3B5FCFEA26E46CCF00138B1D /* DataProvider */,
 				3BC4F05026DE797900AC3F68 /* ViewModel */,
 				3B7648FA26CC962000C0F52D /* CustomCell */,
-				3B5FCFEF26E5118F00138B1D /* Protocols */,
 				3B7648FD26CC968200C0F52D /* Extension */,
 				3B7749D526D3FDB700FB85A4 /* ImagesFiles */,
 				03B8611326C1E47700DAC12A /* Main.storyboard */,
@@ -208,9 +210,8 @@
 		03B8612326C1E47E00DAC12A /* InsuranceAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				3B7648E526CC956D00C0F52D /* ProfileEditCell.swift */,
-				03B8612426C1E47E00DAC12A /* InsuranceAppTests.swift */,
 				03B8612626C1E47E00DAC12A /* Info.plist */,
+				3BEEBB7D26EA618900588A85 /* LoginVCTests.swift */,
 			);
 			path = InsuranceAppTests;
 			sourceTree = "<group>";
@@ -227,8 +228,10 @@
 		1770BCC0A8CD361A1DFEBBD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7BBBE4A5CB2DE6C76ECECDEE /* Pods-InsuranceApp.debug.xcconfig */,
-				118F46C9B9725988C1B07AA4 /* Pods-InsuranceApp.release.xcconfig */,
+				8831BED3D7AB4C9647C79EB1 /* Pods-InsuranceApp.debug.xcconfig */,
+				9EFE30222AF8246A831E686F /* Pods-InsuranceApp.release.xcconfig */,
+				57E2401BB3AFFC909AA271E2 /* Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig */,
+				4A0B679F2B5B6C7CF6A84A25 /* Pods-InsuranceApp-InsuranceAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -236,7 +239,9 @@
 		339BF71EBF8AE6F88B048ECF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F00EAE49EC869B90C836F03B /* Pods_InsuranceApp.framework */,
+				3BFE5BC026F21A150051F10D /* TableViewReuseableCell.framework */,
+				DA51C48B865D3EB2DC31D80C /* Pods_InsuranceApp.framework */,
+				C2087F372FBB515A7BC08142 /* Pods_InsuranceApp_InsuranceAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,14 +271,6 @@
 				3B5FCFFA26E5CE9B00138B1D /* DashboardDataProvider.swift */,
 			);
 			path = DataProvider;
-			sourceTree = "<group>";
-		};
-		3B5FCFEF26E5118F00138B1D /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				3B5FCFF026E511DE00138B1D /* ReuseableViewProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		3B7648F926CC95F500C0F52D /* Controller */ = {
@@ -318,7 +315,6 @@
 			children = (
 				3B7648EC26CC956E00C0F52D /* ReuseableItemsExt.swift */,
 				3B2030F926DE913A003D78FE /* SpinnerView.swift */,
-				3B5FCFF226E5136900138B1D /* UITableViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -382,11 +378,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03B8613426C1E47E00DAC12A /* Build configuration list for PBXNativeTarget "InsuranceApp" */;
 			buildPhases = (
-				7FE058005DDB1E674309EE95 /* [CP] Check Pods Manifest.lock */,
+				1317FF5617277F28B0BD943B /* [CP] Check Pods Manifest.lock */,
 				03B8610626C1E47700DAC12A /* Sources */,
 				03B8610726C1E47700DAC12A /* Frameworks */,
 				03B8610826C1E47700DAC12A /* Resources */,
-				0BEDF1F0C96F840D82E4E421 /* [CP] Embed Pods Frameworks */,
+				0FD929DE234A96A96E8E24B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,9 +397,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03B8613726C1E47E00DAC12A /* Build configuration list for PBXNativeTarget "InsuranceAppTests" */;
 			buildPhases = (
+				CF813C133B302E9F365EB619 /* [CP] Check Pods Manifest.lock */,
 				03B8611C26C1E47E00DAC12A /* Sources */,
 				03B8611D26C1E47E00DAC12A /* Frameworks */,
 				03B8611E26C1E47E00DAC12A /* Resources */,
+				1D1E427F7E4D18D6537784C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -482,6 +480,7 @@
 			files = (
 				3B12378626D8A27B005B8D7C /* swiftLogo.png in Resources */,
 				3B12377D26D7590E005B8D7C /* vehicleImg.jpeg in Resources */,
+				3BBB879926F18C2C00AF3965 /* vehicleInsurance.html in Resources */,
 				3B12378426D801BD005B8D7C /* black-circle.png in Resources */,
 				3B12377F26D7F5B3005B8D7C /* dots.png in Resources */,
 				03B8611A26C1E47D00DAC12A /* LaunchScreen.storyboard in Resources */,
@@ -510,7 +509,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0BEDF1F0C96F840D82E4E421 /* [CP] Embed Pods Frameworks */ = {
+		0FD929DE234A96A96E8E24B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -527,7 +526,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InsuranceApp/Pods-InsuranceApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7FE058005DDB1E674309EE95 /* [CP] Check Pods Manifest.lock */ = {
+		1317FF5617277F28B0BD943B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -543,6 +542,45 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-InsuranceApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D1E427F7E4D18D6537784C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InsuranceApp-InsuranceAppTests/Pods-InsuranceApp-InsuranceAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InsuranceApp-InsuranceAppTests/Pods-InsuranceApp-InsuranceAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InsuranceApp-InsuranceAppTests/Pods-InsuranceApp-InsuranceAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF813C133B302E9F365EB619 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InsuranceApp-InsuranceAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -568,7 +606,6 @@
 				3B7749D926D4136600FB85A4 /* ReportAndRequestCell.swift in Sources */,
 				3B5FCFE726E460DD00138B1D /* PolicyViewModel.swift in Sources */,
 				3B7749C126D0A97A00FB85A4 /* LoginNetworkManager.swift in Sources */,
-				3B5FCFF126E511DE00138B1D /* ReuseableViewProtocol.swift in Sources */,
 				3B5FCFFB26E5CE9B00138B1D /* DashboardDataProvider.swift in Sources */,
 				3B80CF7B26D498EA000590D8 /* UpcomingBillCell.swift in Sources */,
 				3B80CF7F26D4B9D8000590D8 /* MyCardCollectionsViewCill.swift in Sources */,
@@ -580,7 +617,6 @@
 				3B5FCFEE26E46DEE00138B1D /* PolicyData.swift in Sources */,
 				3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */,
 				3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */,
-				3B5FCFF326E5136900138B1D /* UITableViewExtension.swift in Sources */,
 				3B7749D226D3E9D200FB85A4 /* DashboardVC.swift in Sources */,
 				3B80CF7D26D4B318000590D8 /* MyCardCell.swift in Sources */,
 				3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */,
@@ -597,8 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B8612526C1E47E00DAC12A /* InsuranceAppTests.swift in Sources */,
-				3B7749B226CDCD8A00FB85A4 /* ProfileEditCell.swift in Sources */,
+				3BEEBB7E26EA618900588A85 /* LoginVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,12 +798,13 @@
 		};
 		03B8613526C1E47E00DAC12A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BBBE4A5CB2DE6C76ECECDEE /* Pods-InsuranceApp.debug.xcconfig */;
+			baseConfigurationReference = 8831BED3D7AB4C9647C79EB1 /* Pods-InsuranceApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TU297MT8N2;
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -784,12 +820,13 @@
 		};
 		03B8613626C1E47E00DAC12A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 118F46C9B9725988C1B07AA4 /* Pods-InsuranceApp.release.xcconfig */;
+			baseConfigurationReference = 9EFE30222AF8246A831E686F /* Pods-InsuranceApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TU297MT8N2;
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -805,8 +842,9 @@
 		};
 		03B8613826C1E47E00DAC12A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57E2401BB3AFFC909AA271E2 /* Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = InsuranceAppTests/Info.plist;
@@ -826,6 +864,7 @@
 		};
 		03B8613926C1E47E00DAC12A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A0B679F2B5B6C7CF6A84A25 /* Pods-InsuranceApp-InsuranceAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

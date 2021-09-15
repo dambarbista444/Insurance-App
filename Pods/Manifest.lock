@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.4.3)
+  - PopUp (0.1.0):
+    - SnapKit (~> 5.0.0)
+    - TableViewReuseableCell
   - Profile (0.1.0):
     - Alamofire (~> 5.2)
     - PromiseKit (~> 6.8)
@@ -15,18 +18,23 @@ PODS:
   - PromiseKit/UIKit (6.15.3):
     - PromiseKit/CorePromise
   - Quotes (0.1.0):
+    - PopUp
     - Profile
     - SnapKit (~> 5.0.0)
+    - TableViewReuseableCell
   - SnapKit (5.0.1)
   - SwiftyJSON (4.3.0)
+  - TableViewReuseableCell (0.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - PopUp (from `Modules/PopUp`)
   - Profile (from `Modules/Profile`)
   - PromiseKit (~> 6.8)
   - Quotes (from `Modules/Quotes`)
   - SnapKit (~> 5.0.0)
   - SwiftyJSON (~> 4.0)
+  - TableViewReuseableCell (from `Modules/TableViewReuseableCell`)
 
 SPEC REPOS:
   trunk:
@@ -36,19 +44,25 @@ SPEC REPOS:
     - SwiftyJSON
 
 EXTERNAL SOURCES:
+  PopUp:
+    :path: Modules/PopUp
   Profile:
     :path: Modules/Profile
   Quotes:
     :path: Modules/Quotes
+  TableViewReuseableCell:
+    :path: Modules/TableViewReuseableCell
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  PopUp: 8b7551d6e32f9251ee0cb809f8a3a7dd539fa120
   Profile: 4497c390ac9e44137f27237c070dbaf836e327e4
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
-  Quotes: cedec27ebb632097ddd82d7dc6fb9c0679a72267
+  Quotes: bb572cd1832aa1498f59e5265b3c74dd7ee58f36
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TableViewReuseableCell: c4d388877a76cbef2ba1daa1bec89b58a011a983
 
-PODFILE CHECKSUM: 2ab585fdcb8657599e207212d1ec995ae7d9dc63
+PODFILE CHECKSUM: 745d0c94dd836fad8f939317762de062210a5def
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.10.0

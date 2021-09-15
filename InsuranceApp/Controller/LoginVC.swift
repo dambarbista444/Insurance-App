@@ -10,17 +10,13 @@ import Alamofire
 import PromiseKit
 import SnapKit
 
-
-
-
 class LoginVC: UIViewController, UITextFieldDelegate {
     
     
-    
     // MARK:- Properties
-   private let logoImageView = UIImageView()
+    private let logoImageView = UIImageView()
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "LOGIN"
         label.font = .boldSystemFont(ofSize: 20)
@@ -28,16 +24,16 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
     
-    private var tableView: UITableView = {
+    
+    let tableView: UITableView = {
         let table = UITableView()
         table.register(LoginCell.self, forCellReuseIdentifier: "loginCell")
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
     
-    private let signInButton: UIButton = {
+    let signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("SIGN IN", for: .normal)
         button.backgroundColor = .black
@@ -65,7 +61,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     private let loginViewModel = LoginViewModel()
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,42 +87,42 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     /// When user touch the loging textfield
     @objc func moveloginStackViewUpward(_ notification: Notification) {
-    
+        
         loginStackView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.left.equalTo(view.snp.left).offset(20)
             make.right.equalTo(view.snp.right).offset(-20)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-250)
         }
-     }
+    }
     
     
-
+    
     private func configureItemsFromExtesion() {
         logoImageView.reuseableImageView(image: UIImage(named: "pncLogo.jpeg")!)
         
     }
     
     
-    func userEmail() -> String {
+    func getUserEmail() -> String {
         
         let indexPathForUserID = IndexPath(row: 0, section: 0)
         let userIDCell = tableView.cellForRow(at: indexPathForUserID) as! LoginCell
-        return userIDCell.loginTextField.text!
+        return userIDCell.loginTextField.text ?? "no input"
     }
     
     
-    func userPassword() -> String {
+    func getUserPassword() -> String {
         
         let indexPathForPassword = IndexPath(row: 1, section: 0)
         let passwordCell = tableView.cellForRow(at: indexPathForPassword) as! LoginCell
-        return passwordCell.loginTextField.text!
+        return passwordCell.loginTextField.text ?? "no input"
     }
     
     /// Login Action
     @objc private func login() {
         
-      //  loginViewModel.login(with: userEmail(), and: userPassword(), showLoginErrorMessageAt: self)
+        //loginViewModel.login(with: getUserEmail(), and: getUserPassword(), showLoginErrorMessageAt: self)
         
         // MARK:- This below codes are just use to navigate to second screen without entering email and password everytime while working.
         let tabBarController = TabBarController()
@@ -177,45 +173,45 @@ extension LoginVC:  UITableViewDataSource, UITableViewDelegate {
     
 }
 
- 
+
 // MARK:- Constraints
 
 extension LoginVC  {
     
     func setUpConstrints() {
-       
-       loginStackView.snp.makeConstraints { make in
-           make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-           make.left.equalTo(view.snp.left).offset(20)
-           make.right.equalTo(view.snp.right).offset(-20)
-           make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100)
-       }
-       
-       titleLabel.snp.makeConstraints { make in
-           make.height.equalTo(30)
-       }
-       
-       logoImageView.snp.makeConstraints { make in
         
-           make.height.equalTo(200)
-       }
-       
-       
-       tableView.snp.makeConstraints { make in
-           make.left.equalTo(loginStackView.snp.left)
-           make.right.equalTo(loginStackView.snp.right)
-           make.height.equalTo(110)
-       }
-       
-      
-       signInButton.snp.makeConstraints { make in
-           make.left.equalTo(loginStackView.snp.left)
-           make.right.equalTo(loginStackView.snp.right)
-           make.height.equalTo(40)
-       }
-
+        loginStackView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(view.snp.left).offset(20)
+            make.right.equalTo(view.snp.right).offset(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-100)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.height.equalTo(30)
+        }
+        
+        logoImageView.snp.makeConstraints { make in
+            
+            make.height.equalTo(200)
+        }
+        
+        
+        tableView.snp.makeConstraints { make in
+            make.left.equalTo(loginStackView.snp.left)
+            make.right.equalTo(loginStackView.snp.right)
+            make.height.equalTo(110)
+        }
+        
+        
+        signInButton.snp.makeConstraints { make in
+            make.left.equalTo(loginStackView.snp.left)
+            make.right.equalTo(loginStackView.snp.right)
+            make.height.equalTo(40)
+        }
+        
     }
-   
+    
 }
 
 

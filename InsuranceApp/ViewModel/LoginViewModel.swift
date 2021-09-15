@@ -27,21 +27,18 @@ struct LoginViewModel {
                 
                 tabBarController.modalPresentationStyle = .fullScreen
                 loginVC.navigationController?.pushViewController(tabBarController, animated: true)
-        
+                
                 tabBarController.showLoadingSpinner(on: tabBarController.view)  // turn on loading spinner
                 
                 firstly {
-                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in
-                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-                    }),
-                    stateNetwork.fetchStateData(completaion: { stateDetails in
-                        /// nothing do with closure for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
-                    }))
-                    .done { personReult in
-
-                        TabBarController.removeLoadingSpinner()  // remove loading spinner
-                    }
-                } .catch { error in
+                    /// nothing do with closures for now  i wanted to make it optional closure so i could set it nil  and make it clean but in mean time i couldn't do that
+                    when(fulfilled: personModelNetworkManager.fetchPersonDetails(completionHandler: { personDetails in }),
+                         stateNetwork.fetchStateData(completaion: { stateDetails in }))
+                        .done { personReult in
+                            
+                            TabBarController.removeLoadingSpinner()  // remove loading spinner
+                        }
+                }.catch { error in
                     /// nothing catch for now
                 }
             } .catch { error in
