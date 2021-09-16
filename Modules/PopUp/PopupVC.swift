@@ -33,7 +33,7 @@ public class PopupVC: UIViewController {
         return tableView
     }()
     
-    
+   
     
     public override func viewDidLoad() {
         super.viewDidLoad()
