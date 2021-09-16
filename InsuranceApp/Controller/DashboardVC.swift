@@ -7,11 +7,11 @@
 
 import UIKit
 import Profile
+import PopUp
+
 
 class DashboardVC: UIViewController {
     
-    
-    let reportItems = ["Roadside assistance report", "Report accident"]
     
     let navigationBar: UINavigationBar = {
         
@@ -28,40 +28,52 @@ class DashboardVC: UIViewController {
         return navBar
     }()
     
-    private let tableView: UITableView = {
-        let table = UITableView()
-        table.register(ReportOrRequestCell.self, forCellReuseIdentifier: "reportCell")
-        table.register(UpcomingBillCell.self, forCellReuseIdentifier: "billCell")
-        table.register(MyCardCell.self, forCellReuseIdentifier: "myIdCell")
-        table.register(ContactAgentCell.self, forCellReuseIdentifier: "contactCell")
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.showsVerticalScrollIndicator = false
-        return table
+    private let dashboardTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.registerCell(cellType: UpcomingBillCell.self)
+        tableView.registerCell(cellType: MyCardCell.self)
+        tableView.registerCell(cellType: ReportAndRequestCell.self)
+        tableView.registerCell(cellType: ContactAgentCell.self)
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
     }()
     
+    private let viewModel: DashboardViewConfigurable
     
+    init(viewModel: DashboardViewConfigurable) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         addViews()
         setUpConstraints()
-        tableView.delegate = self
-        tableView.dataSource = self
+        dashboardTableView.delegate = self
+        dashboardTableView.dataSource = self
+    
+        
     }
     
     
     private func addViews() {
         
         self.view.addSubview(navigationBar)
-        self.view.addSubview(tableView)
+        self.view.addSubview(dashboardTableView)
     }
     
     
     private func setUpConstraints() {
         
-        tableView.snp.makeConstraints { make in
-            
+        dashboardTableView.snp.makeConstraints { make in
             make.top.equalTo(navigationBar.snp.bottom).offset(20)
             make.left.equalTo(view.snp.left).offset(20)
             make.right.equalTo(view.snp.right).offset(-20)
@@ -74,10 +86,8 @@ class DashboardVC: UIViewController {
         
         let profileVC = ProfileVC()
         profileVC.modalPresentationStyle = .fullScreen
-        
         present(profileVC, animated: true)
     }
-    
 }
 
 
@@ -86,72 +96,50 @@ class DashboardVC: UIViewController {
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return viewModel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case DashboardSection.upComingBill:
-            return 1
-        case DashboardSection.myCards:
-            return 1
-        case DashboardSection.reportOrRequest:
-            return 2
-        case DashboardSection.contactAgent:
-            return 1
-        default:
-            return 1
-        }
+        
+        return viewModel.numberOfRowsPerSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard let row = viewModel.row(for: indexPath) else { return UITableViewCell() }
         
-        switch indexPath.section {
-        case DashboardSection.upComingBill:
-            let billCell = tableView.dequeueReusableCell(withIdentifier: "billCell",for: indexPath) as! UpcomingBillCell
-            return billCell
+        switch row {
+        case let .upcomingBillRow(cellViewModel):
+            let cell: UpcomingBillCell = tableView.cell(for: indexPath)
+            cell.configureCell(with: cellViewModel)
+            return cell
             
-        case DashboardSection.myCards:
-            let myCardCell = tableView.dequeueReusableCell(withIdentifier: "myIdCell",for: indexPath) as! MyCardCell
-            return myCardCell
+        case  .myCardsRow(_):
+            let cell: MyCardCell = tableView.cell(for: indexPath)
+            return cell
             
-        case DashboardSection.reportOrRequest:
-            let reportCell = tableView.dequeueReusableCell(withIdentifier: "reportCell",for: indexPath) as! ReportOrRequestCell
-            reportCell.reportOrRequestLablel.text = reportItems[indexPath.row]
-            return reportCell
+        case let .reportAndRequestRow(cellViewModel):
+            let cell: ReportAndRequestCell = tableView.cell(for: indexPath)
+            cell.configureCell(with: cellViewModel)
+            return cell
             
-        case DashboardSection.contactAgent:
-            let contactCell = tableView.dequeueReusableCell(withIdentifier: "contactCell",for: indexPath) as! ContactAgentCell
-            return contactCell
-            
-        default:
-            return UITableViewCell()
+        case let .contactAgentRow(cellViewModel):
+            let cell: ContactAgentCell = tableView.cell(for: indexPath)
+            cell.configureCell(with: cellViewModel)
+            return cell
         }
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch indexPath.section {
-        case DashboardSection.upComingBill:
-            return 200
-        case DashboardSection.myCards:
-            return 260
-        case DashboardSection.reportOrRequest:
-            return 40
-        case DashboardSection.contactAgent:
-            return 120
-        default:
-            return 40
-        }
+        return CGFloat(viewModel.heightForRowAt(indexPath: indexPath))
     }
     
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let sectionTitles = ["Upcoming Bills", "My Cards","Report/Request","Contact Agnet", ]
+        let sectionTitles = viewModel.titleForHeaderInSection
         let headerTitleWidth = self.view.frame.width - 20
         let headerTitleLabel = UILabel(frame: CGRect(x: 0, y: 5, width: headerTitleWidth, height: 20))
         headerTitleLabel.text = sectionTitles[section]

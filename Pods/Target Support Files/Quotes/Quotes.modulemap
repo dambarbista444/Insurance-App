@@ -1,0 +1,6 @@
+framework module Quotes {
+  umbrella header "Quotes-umbrella.h"
+
+  export *
+  module * { export * }
+}

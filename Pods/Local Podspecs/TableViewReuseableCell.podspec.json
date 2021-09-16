@@ -1,0 +1,19 @@
+{
+  "name": "TableViewReuseableCell",
+  "version": "0.1.0",
+  "homepage": "https://gitlab.com/virtusaiostraining/t3training/-/tree/assignment8-dambar",
+  "license": "MIT",
+  "authors": {
+    "Dambar Bista": "dambarbista.db@gmail.com"
+  },
+  "summary": "To layout profile card",
+  "source": {
+    "git": "https://dummyurl.com/Profile.git",
+    "tag": "v0. 1.0"
+  },
+  "source_files": "**/*.{swift}",
+  "platforms": {
+    "ios": "13.0"
+  },
+  "resources": "**/*.{xib,png,json,xcassets}"
+}

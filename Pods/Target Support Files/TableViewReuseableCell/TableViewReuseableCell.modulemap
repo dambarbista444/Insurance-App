@@ -1,0 +1,6 @@
+framework module TableViewReuseableCell {
+  umbrella header "TableViewReuseableCell-umbrella.h"
+
+  export *
+  module * { export * }
+}

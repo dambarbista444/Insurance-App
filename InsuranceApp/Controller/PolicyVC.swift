@@ -27,52 +27,55 @@ class PolicyVC: UIViewController {
         return navBar
     }()
     
-   private let tableView: UITableView = {
-        let table = UITableView()
-        table.register(AutoCell.self, forCellReuseIdentifier: "autoCell")
-        table.register(HomeOrRentalCell.self, forCellReuseIdentifier: "homeCell")
-        table.register(ReportOrRequestCell.self, forCellReuseIdentifier: "documentsCell")
-       
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.showsVerticalScrollIndicator = false
-        return table
+    private let PolicyTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.registerCell(cellType: AutoCell.self)
+        tableView.registerCell(cellType: HomeAndRentalCell.self)
+        tableView.registerCell(cellType: DocumentsTableViewCell.self)
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
     }()
     
     
-    var documents = ["Auto", "Life", "House"]
-    var vehicles = ["2012 Nissan Altima", "2000 BMW"]
+    private let viewModel: PolicyViewConfigurable
     
+    init(viewModel: PolicyViewConfigurable) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
         addViews()
         setUpConstraints()
-        tableView.delegate = self
-        tableView.dataSource = self
+        PolicyTableView.delegate = self
+        PolicyTableView.dataSource = self
     }
     
   
-
     private func addViews() {
         
         self.view.addSubview(navigationBar)
-        self.view.addSubview(tableView)
+        self.view.addSubview(PolicyTableView)
     }
     
     
     private func setUpConstraints() {
         
-        tableView.snp.makeConstraints { make in
+        PolicyTableView.snp.makeConstraints { make in
             
             make.top.equalTo(navigationBar.snp.bottom).offset(20)
             make.left.equalTo(view.snp.left).offset(20)
             make.right.equalTo(view.snp.right).offset(-20)
             make.bottom.equalTo(view.snp.bottom)
         }
-        
-        
     }
     
     
@@ -82,81 +85,57 @@ class PolicyVC: UIViewController {
         profileVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(profileVC, animated: true)
     }
-    
-
-   
 }
 
+
+// MARK:- TableView DataSource And Delegate
 extension PolicyVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+       
+        return viewModel.numberOfSections
     }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case PolicySection.auto:
-            return 2
-
-        case PolicySection.HomeOrRental:
-            return 1
-
-        case PolicySection.documents:
-            return 3
-
-        default:
-            return 1
-        }
+       
+        return viewModel.numberOfRowsPerSection(section: section)
     }
+    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        switch indexPath.section {
-
-        case PolicySection.auto:
-            let autoCell = tableView.dequeueReusableCell(withIdentifier: "autoCell",for: indexPath) as! AutoCell
-            autoCell.carModel.text = vehicles[indexPath.row]
-            return autoCell
-                                        // later change cell id
-        case PolicySection.HomeOrRental:
-            let homeCell = tableView.dequeueReusableCell(withIdentifier: "homeCell",for: indexPath) as! HomeOrRentalCell
-            return homeCell
-
-        case PolicySection.documents:
-                /// I am reusing this report and requestCell  becuse documents and report or request have same  contents are same
-            let documentsCell = tableView.dequeueReusableCell(withIdentifier: "documentsCell",for: indexPath) as! ReportOrRequestCell
-            documentsCell.reportOrRequestLablel.text = documents[indexPath.row]
-
-            return documentsCell
-
-        default:
-            return UITableViewCell()
+       
+        guard  let row = viewModel.row(for: indexPath) else { return UITableViewCell()}
+        
+        switch row {
+        case let .autoRow(cellViewModel):
+            let cell: AutoCell = tableView.cell(for: indexPath)
+            cell.configureCell(with: cellViewModel)
+            return cell
+            
+        case let .homeAndRentalRow(cellViewModel):
+            let cell: HomeAndRentalCell = tableView.cell(for: indexPath)
+            cell.configureCell(with: cellViewModel)
+            return cell
+            
+        case let .documentsRow(cellViewModel):
+            let cell: DocumentsTableViewCell = tableView.cell(for: indexPath)
+            cell.configureCell(with: cellViewModel)
+            return cell
         }
     }
 
 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        switch indexPath.section {
-        case PolicySection.auto:
-            return 100
-
-        case PolicySection.HomeOrRental:
-            return 120
-
-        case PolicySection.documents:
-            return 40
-
-        default:
-            return 60
-        }
+        
+        return CGFloat(viewModel.heightForRowAt(indexPath: indexPath))
     }
 
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
-        let sectionTitles = ["AUTO", "HOME/RENTAL","DOCUMENTS" ]
+        let sectionTitles = viewModel.titleForHeaderInSection
         let headerTitleWidth = self.view.frame.width - 20
         let headerTitleLabel = UILabel(frame: CGRect(x: 0, y: 5, width: headerTitleWidth, height: 20))
         headerTitleLabel.text = sectionTitles[section]
@@ -168,7 +147,5 @@ extension PolicyVC: UITableViewDelegate, UITableViewDataSource {
 
         return headerView
     }
-    
-    
     
 }
