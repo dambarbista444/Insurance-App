@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol PolicyViewConfigurable {
+
+
+public protocol PolicyViewConfigurable {
     
     var numberOfSections: Int {get}
     var titleForHeaderInSection: [String] {get}
@@ -19,26 +21,26 @@ protocol PolicyViewConfigurable {
 
 extension PolicyViewConfigurable {
     
-    var titleForHeaderInSection: [String] {
-     let titles = ["AUTO", "HOME/RENTAL", "DOCUMENTS" ]
-      return titles
+    public var titleForHeaderInSection: [String] {
+        let titles = ["AUTO", "HOME/RENTAL", "DOCUMENTS" ]
+        return titles
     }
 }
 
 
-class PolicyViewModel: PolicyViewConfigurable {
-   
+public class PolicyViewModel: PolicyViewConfigurable {
+    
     private var dataProvider: PolicyDataProviderConfigurable
     var sections =  [PolicySection]()
     
-    init(dataProvider: PolicyDataProviderConfigurable = PolicyDataProvider.shared) {
+   public init(dataProvider: PolicyDataProviderConfigurable = PolicyDataProvider.shared) {
         self.dataProvider = dataProvider
         configureSection()
     }
-
-
+    
+    
     func configureSection() {
-      
+        
         let policyData = dataProvider.loadPolicyData()
         var autoRows = [PolicyRow]()
         var homeAndRentalRows = [PolicyRow]()
@@ -68,32 +70,32 @@ class PolicyViewModel: PolicyViewConfigurable {
             sections.append(PolicySection.documentsSection(documentsRow))
         }
     }
-
+    
 }
 
 extension PolicyViewModel {
     
-    var numberOfSections: Int {
+    public var numberOfSections: Int {
         return sections.count
     }
     
-    func numberOfRowsPerSection(section: Int) -> Int {
+    public func numberOfRowsPerSection(section: Int) -> Int {
         return sections[section].numberOfRows()
     }
     
     
-    func row(for indexPath: IndexPath) -> PolicyRow? {
+    public func row(for indexPath: IndexPath) -> PolicyRow? {
         return sections[indexPath.section].row(for: indexPath)
     }
     
     
-    func heightForRowAt(indexPath: IndexPath) -> Int {
+    public func heightForRowAt(indexPath: IndexPath) -> Int {
         return sections[indexPath.section].height(for: indexPath)
     }
 }
 
 
-enum PolicyRow {
+public enum PolicyRow {
     case autoRow(AutoTableViewCellConfigurable)
     case homeAndRentalRow(HomeAndRentalTableViewCellConfigurable)
     case documentsRow(DocumentsTableViewCellConfigurable)

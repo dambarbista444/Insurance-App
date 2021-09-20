@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct VehicleInsuranceQuotesDetails {
+public struct autoInsuranceQuotesDetails {
     let title: String
     let insuraceDetails: String
 }

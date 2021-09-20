@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol PolicyDataProviderConfigurable {
+public protocol PolicyDataProviderConfigurable {
     
     var policyData: PolicyData? {get}
     
@@ -16,13 +16,13 @@ protocol PolicyDataProviderConfigurable {
 }
 
 
-class PolicyDataProvider: PolicyDataProviderConfigurable {
+public class PolicyDataProvider: PolicyDataProviderConfigurable {
     
-    var policyData: PolicyData?
+    public var policyData: PolicyData?
     
     public static let shared = PolicyDataProvider()
     
-    func loadPolicyData() -> PolicyData? {
+    public func loadPolicyData() -> PolicyData? {
         
         // MARK:- Auto Cell
         let autoOneItems = AutoItems(vehicleName: "2012 Nissan Altima", vehicleImage: UIImage(named: "vehicleImg.jpeg")!, billingDate: "Next Billing Date: 08/24/2021", forwardArrowImage: UIImage(systemName: "chevron.forward")!)

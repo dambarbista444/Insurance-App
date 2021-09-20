@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Profile
 
-class PolicyVC: UIViewController {
+public class PolicyVC: UIViewController {
     
 
     let navigationBar: UINavigationBar = {
@@ -27,9 +27,9 @@ class PolicyVC: UIViewController {
         return navBar
     }()
     
-    private let PolicyTableView: UITableView = {
+     let PolicyTableView: UITableView = {
         let tableView = UITableView()
-        tableView.registerCell(cellType: AutoCell.self)
+        tableView.registerCell(cellType: AutoTableViewCell.self)
         tableView.registerCell(cellType: HomeAndRentalCell.self)
         tableView.registerCell(cellType: DocumentsTableViewCell.self)
         tableView.showsVerticalScrollIndicator = false
@@ -39,7 +39,7 @@ class PolicyVC: UIViewController {
     
     private let viewModel: PolicyViewConfigurable
     
-    init(viewModel: PolicyViewConfigurable) {
+    public init(viewModel: PolicyViewConfigurable) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -49,7 +49,7 @@ class PolicyVC: UIViewController {
     }
     
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
@@ -91,25 +91,25 @@ class PolicyVC: UIViewController {
 // MARK:- TableView DataSource And Delegate
 extension PolicyVC: UITableViewDelegate, UITableViewDataSource {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
        
         return viewModel.numberOfSections
     }
     
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
         return viewModel.numberOfRowsPerSection(section: section)
     }
     
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         guard  let row = viewModel.row(for: indexPath) else { return UITableViewCell()}
         
         switch row {
         case let .autoRow(cellViewModel):
-            let cell: AutoCell = tableView.cell(for: indexPath)
+            let cell: AutoTableViewCell = tableView.cell(for: indexPath)
             cell.configureCell(with: cellViewModel)
             return cell
             
@@ -127,13 +127,28 @@ extension PolicyVC: UITableViewDelegate, UITableViewDataSource {
 
 
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return CGFloat(viewModel.heightForRowAt(indexPath: indexPath))
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let autoSectionIndex = 0
+        let autoRow = 0
+        
+        if indexPath.section == autoSectionIndex,indexPath.row == autoRow {
+            presentPopup(with: AutoDetailsPopupViewModel())
+        }
+    }
+    
+   private func presentPopup(with viewModel: PopupViewConfigurable) {
+        let popupVC = PopupVC(viewModel: viewModel)
+        present(popupVC, animated: true)
+    }
 
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let sectionTitles = viewModel.titleForHeaderInSection
         let headerTitleWidth = self.view.frame.width - 20
@@ -149,3 +164,4 @@ extension PolicyVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+

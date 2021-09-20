@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 import SnapKit
 
-class PopupTableViewCell: UITableViewCell, WKUIDelegate {
+class AutoInsuranceQuotesDetailsTableViewCell: UITableViewCell, WKUIDelegate {
     
     let webView = WKWebView()
     let mainView = UIView() /// this view will hold stackviews
@@ -247,14 +247,14 @@ class PopupTableViewCell: UITableViewCell, WKUIDelegate {
 // MARK:- Protocals and View model
 
 public protocol PopupTableViewCellConfigurable {
-    var vehicleDetails: VehicleInsuranceQuotesDetails? { get }
+    var autoDetails: autoInsuranceQuotesDetails? { get }
 }
 
 class PopupTableViewCellViewModel: PopupTableViewCellConfigurable {
-    var vehicleDetails: VehicleInsuranceQuotesDetails?
+    var autoDetails: autoInsuranceQuotesDetails?
     
-    init(vehicleDetails: VehicleInsuranceQuotesDetails) {
-        self.vehicleDetails = vehicleDetails
+    init(autoDetails: autoInsuranceQuotesDetails) {
+        self.autoDetails = autoDetails
     }
     
     

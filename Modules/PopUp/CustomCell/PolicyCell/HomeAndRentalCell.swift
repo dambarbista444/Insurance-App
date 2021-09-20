@@ -1,29 +1,28 @@
 //
-//  AutoCell.swift
+//  HomeOrRentalCell.swift
 //  InsuranceApp
 //
-//  Created by Dambar Bista on 8/25/21.
+//  Created by Dambar Bista on 8/26/21.
 //
 
 import UIKit
 
-class AutoCell: UITableViewCell {
+class HomeAndRentalCell: UITableViewCell {
     
-    
-    var vehicleImageView = UIImageView()
-    var vehicleNameLabel = UILabel()
-    var billDateLabel = UILabel()
+    var streetNameLabel = UILabel()
+    var homeTypeLabel = UILabel()
+    var policyEndDateLabel = UILabel()
     var forwardArrowImageView = UIImageView()
     
     lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.alignment = .center
+        stackView.alignment = .leading
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        [self.vehicleNameLabel,self.billDateLabel ].forEach {
+        [self.streetNameLabel, self.homeTypeLabel, self.policyEndDateLabel ].forEach {
             stackView.addArrangedSubview($0)
             
         }
@@ -38,23 +37,21 @@ class AutoCell: UITableViewCell {
         let mainView = UIView()// view which hold stackview
         addViews(view: mainView)
         setUpConstraints(view: mainView)
+    
         
-        vehicleImageView.layer.cornerRadius = 10
-        vehicleImageView.clipsToBounds = true
-        
-        vehicleNameLabel.font = .systemFont(ofSize: 20)
-        billDateLabel.font = .systemFont(ofSize: 18)
+        streetNameLabel.font = .systemFont(ofSize: 20)
+        homeTypeLabel.font = .systemFont(ofSize: 18)
+        policyEndDateLabel.font = .systemFont(ofSize: 18)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+
+
     private func addViews(view: UIView) {
         
-        
-        contentView.addSubview(vehicleImageView)
         view.addSubview(verticalStackView)
         contentView.addSubview(forwardArrowImageView)
         contentView.addSubview(view)
@@ -63,16 +60,10 @@ class AutoCell: UITableViewCell {
     
     private func setUpConstraints(view: UIView) {
         
-        vehicleImageView.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(20)
-            make.left.equalTo(contentView.snp.left).offset(10)
-            make.height.equalTo(60)
-            make.width.equalTo(60)
-        }
         
         view.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
-            make.left.equalTo(vehicleImageView.snp.right).offset(10)
+            make.left.equalTo(contentView.snp.left).offset(10)
             make.right.equalTo(forwardArrowImageView.snp.right).offset(-10)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
         }
@@ -89,26 +80,30 @@ class AutoCell: UITableViewCell {
     }
     
     
-    func configureCell(with viewModel: AutoTableViewCellConfigurable) {
+    func configureCell(with viewModel: HomeAndRentalTableViewCellConfigurable) {
+        guard let homeAndRentalItems = viewModel.homeAndRentalItems else {return}
         
-        guard let autoItems =  viewModel.autoItems else {return}
-        vehicleNameLabel.text = autoItems.vehicleName
-        vehicleImageView.image = autoItems.vehicleImage
-        billDateLabel.text = autoItems.billingDate
-        forwardArrowImageView.image = autoItems.forwardArrowImage
+        streetNameLabel.text = homeAndRentalItems.streetName
+        homeTypeLabel.text = homeAndRentalItems.homeType
+        policyEndDateLabel.text = homeAndRentalItems.policyEndDate
+        forwardArrowImageView.image = homeAndRentalItems.forwardArrowImage
     }
-}
-
-
-protocol AutoTableViewCellConfigurable {
-    var autoItems: AutoItems? {get}
-}
-
-class AutoTableViewCellViewModel: AutoTableViewCellConfigurable {
-   
-    var autoItems: AutoItems?
     
-    init(autoItems: AutoItems?) {
-        self.autoItems = autoItems
+}
+
+
+// MARK:- Protocols
+public protocol HomeAndRentalTableViewCellConfigurable {
+    var homeAndRentalItems: HomeAndRentalItems? { get }
+}
+
+
+// MARK:- ViewModel
+class HomeAndRentalTableViewCellViewModel: HomeAndRentalTableViewCellConfigurable {
+    var homeAndRentalItems: HomeAndRentalItems?
+    
+    init(homeAndRentalItems: HomeAndRentalItems) {
+        self.homeAndRentalItems = homeAndRentalItems
     }
+    
 }

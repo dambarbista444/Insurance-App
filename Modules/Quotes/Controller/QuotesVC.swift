@@ -86,7 +86,7 @@ public class QuotesVC: UIViewController {
     /// After receiving  notification from QuotesDetailsTableViewCell method called showMoredetails()
     @objc private func popUpShowMoreDetails(_ notification: Notification) {
         
-        let showMoreDetailsVC = PopupVC(viewModel: PopupViewModel())
+        let showMoreDetailsVC = PopupVC(viewModel: HowItworksViewModel())
         
         present(showMoreDetailsVC, animated: false, completion: nil)
     }

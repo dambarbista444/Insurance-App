@@ -13,19 +13,12 @@
 		03B8611726C1E47D00DAC12A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611626C1E47D00DAC12A /* Assets.xcassets */; };
 		03B8611A26C1E47D00DAC12A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B8611826C1E47D00DAC12A /* LaunchScreen.storyboard */; };
 		03B8613026C1E47E00DAC12A /* InsuranceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B8612F26C1E47E00DAC12A /* InsuranceAppUITests.swift */; };
-		3B12377926D7448B005B8D7C /* AutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12377826D7448B005B8D7C /* AutoCell.swift */; };
-		3B12377B26D75080005B8D7C /* HomeAndRentalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12377A26D75080005B8D7C /* HomeAndRentalCell.swift */; };
 		3B12377D26D7590E005B8D7C /* vehicleImg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B12377C26D7590E005B8D7C /* vehicleImg.jpeg */; };
 		3B12377F26D7F5B3005B8D7C /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12377E26D7F5B3005B8D7C /* dots.png */; };
 		3B12378126D7FFE4005B8D7C /* LinkedInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12378026D7FFE4005B8D7C /* LinkedInCell.swift */; };
 		3B12378426D801BD005B8D7C /* black-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12378326D801BD005B8D7C /* black-circle.png */; };
 		3B12378626D8A27B005B8D7C /* swiftLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B12378526D8A27B005B8D7C /* swiftLogo.png */; };
 		3B2030FA26DE913A003D78FE /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2030F926DE913A003D78FE /* SpinnerView.swift */; };
-		3B5FCFE726E460DD00138B1D /* PolicyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFE626E460DD00138B1D /* PolicyViewModel.swift */; };
-		3B5FCFE926E4646700138B1D /* PolicyTVCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFE826E4646700138B1D /* PolicyTVCellModel.swift */; };
-		3B5FCFEC26E46D0300138B1D /* PolicyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFEB26E46D0300138B1D /* PolicyDataProvider.swift */; };
-		3B5FCFEE26E46DEE00138B1D /* PolicyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFED26E46DEE00138B1D /* PolicyData.swift */; };
-		3B5FCFF726E5A00D00138B1D /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFF626E5A00D00138B1D /* DocumentsTableViewCell.swift */; };
 		3B5FCFF926E5CE6F00138B1D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFF826E5CE6F00138B1D /* DashboardViewModel.swift */; };
 		3B5FCFFB26E5CE9B00138B1D /* DashboardDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFFA26E5CE9B00138B1D /* DashboardDataProvider.swift */; };
 		3B5FCFFD26E5CED300138B1D /* DashboardTVCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FCFFC26E5CED300138B1D /* DashboardTVCellModel.swift */; };
@@ -51,7 +44,6 @@
 		3BC4F05226DE79C500AC3F68 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */; };
 		3BEEBB7E26EA618900588A85 /* LoginVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEEBB7D26EA618900588A85 /* LoginVCTests.swift */; };
 		3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */; };
-		3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F52226D7209C00A18383 /* PolicyVC.swift */; };
 		AC9CE481046CD042CCABCDED /* Pods_InsuranceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA51C48B865D3EB2DC31D80C /* Pods_InsuranceApp.framework */; };
 		F01F44F9F26E254667EA6A91 /* Pods_InsuranceApp_InsuranceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2087F372FBB515A7BC08142 /* Pods_InsuranceApp_InsuranceAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -86,19 +78,12 @@
 		03B8612B26C1E47E00DAC12A /* InsuranceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsuranceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B8612F26C1E47E00DAC12A /* InsuranceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAppUITests.swift; sourceTree = "<group>"; };
 		03B8613126C1E47E00DAC12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B12377826D7448B005B8D7C /* AutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCell.swift; sourceTree = "<group>"; };
-		3B12377A26D75080005B8D7C /* HomeAndRentalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAndRentalCell.swift; sourceTree = "<group>"; };
 		3B12377C26D7590E005B8D7C /* vehicleImg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vehicleImg.jpeg; sourceTree = "<group>"; };
 		3B12377E26D7F5B3005B8D7C /* dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dots.png; sourceTree = "<group>"; };
 		3B12378026D7FFE4005B8D7C /* LinkedInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInCell.swift; sourceTree = "<group>"; };
 		3B12378326D801BD005B8D7C /* black-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-circle.png"; sourceTree = "<group>"; };
 		3B12378526D8A27B005B8D7C /* swiftLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiftLogo.png; sourceTree = "<group>"; };
 		3B2030F926DE913A003D78FE /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
-		3B5FCFE626E460DD00138B1D /* PolicyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewModel.swift; sourceTree = "<group>"; };
-		3B5FCFE826E4646700138B1D /* PolicyTVCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyTVCellModel.swift; sourceTree = "<group>"; };
-		3B5FCFEB26E46D0300138B1D /* PolicyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDataProvider.swift; sourceTree = "<group>"; };
-		3B5FCFED26E46DEE00138B1D /* PolicyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyData.swift; sourceTree = "<group>"; };
-		3B5FCFF626E5A00D00138B1D /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		3B5FCFF826E5CE6F00138B1D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3B5FCFFA26E5CE9B00138B1D /* DashboardDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDataProvider.swift; sourceTree = "<group>"; };
 		3B5FCFFC26E5CED300138B1D /* DashboardTVCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTVCellModel.swift; sourceTree = "<group>"; };
@@ -125,7 +110,6 @@
 		3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3BEEBB7D26EA618900588A85 /* LoginVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCTests.swift; sourceTree = "<group>"; };
 		3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInVC.swift; sourceTree = "<group>"; };
-		3BF7F52226D7209C00A18383 /* PolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyVC.swift; sourceTree = "<group>"; };
 		3BFE5BC026F21A150051F10D /* TableViewReuseableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TableViewReuseableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0B679F2B5B6C7CF6A84A25 /* Pods-InsuranceApp-InsuranceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp-InsuranceAppTests.release.xcconfig"; path = "Target Support Files/Pods-InsuranceApp-InsuranceAppTests/Pods-InsuranceApp-InsuranceAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		57E2401BB3AFFC909AA271E2 /* Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig"; path = "Target Support Files/Pods-InsuranceApp-InsuranceAppTests/Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,10 +171,10 @@
 		03B8610C26C1E47700DAC12A /* InsuranceApp */ = {
 			isa = PBXGroup;
 			children = (
-				3BBB879826F18C2C00AF3965 /* vehicleInsurance.html */,
 				03B8610D26C1E47700DAC12A /* AppDelegate.swift */,
 				03B8610F26C1E47700DAC12A /* SceneDelegate.swift */,
-				3B7749CE26D34D6100FB85A4 /* UserDetailsJSONFormat.geojson */,
+				E125A67726F43E06007F74C4 /* HTML File */,
+				E125A67826F43E2B007F74C4 /* JSON File */,
 				3B7749BF26D0A8F800FB85A4 /* Network */,
 				3B7648FB26CC964900C0F52D /* Model */,
 				3B7648F926CC95F500C0F52D /* Controller */,
@@ -246,16 +230,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3B12377726D74421005B8D7C /* PolicyCell */ = {
-			isa = PBXGroup;
-			children = (
-				3B12377826D7448B005B8D7C /* AutoCell.swift */,
-				3B12377A26D75080005B8D7C /* HomeAndRentalCell.swift */,
-				3B5FCFF626E5A00D00138B1D /* DocumentsTableViewCell.swift */,
-			);
-			path = PolicyCell;
-			sourceTree = "<group>";
-		};
 		3B12378226D7FFED005B8D7C /* LinkedInCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,7 +241,6 @@
 		3B5FCFEA26E46CCF00138B1D /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				3B5FCFEB26E46D0300138B1D /* PolicyDataProvider.swift */,
 				3B5FCFFA26E5CE9B00138B1D /* DashboardDataProvider.swift */,
 			);
 			path = DataProvider;
@@ -280,7 +253,6 @@
 				3B7749D126D3E9D200FB85A4 /* DashboardVC.swift */,
 				3B7648E726CC956E00C0F52D /* LoginVC.swift */,
 				3BF7F51E26D71F8000A18383 /* LinkedInVC.swift */,
-				3BF7F52226D7209C00A18383 /* PolicyVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,7 +262,6 @@
 			children = (
 				3B80CF7926D490BE000590D8 /* LoginCell */,
 				3B80CF7726D49065000590D8 /* DashboardCell */,
-				3B12377726D74421005B8D7C /* PolicyCell */,
 				3B12378226D7FFED005B8D7C /* LinkedInCell */,
 			);
 			path = CustomCell;
@@ -302,8 +273,6 @@
 				3B7749BB26CEBBA700FB85A4 /* TVSectionsModel.swift */,
 				3B7749C226D0B12D00FB85A4 /* LoginModel.swift */,
 				3B80CF8026D52B94000590D8 /* MyCard.swift */,
-				3B5FCFE826E4646700138B1D /* PolicyTVCellModel.swift */,
-				3B5FCFED26E46DEE00138B1D /* PolicyData.swift */,
 				3B5FCFFC26E5CED300138B1D /* DashboardTVCellModel.swift */,
 				3B5FCFFE26E5D0A200138B1D /* DashboardData.swift */,
 			);
@@ -365,10 +334,25 @@
 			isa = PBXGroup;
 			children = (
 				3BC4F05126DE79C500AC3F68 /* LoginViewModel.swift */,
-				3B5FCFE626E460DD00138B1D /* PolicyViewModel.swift */,
 				3B5FCFF826E5CE6F00138B1D /* DashboardViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E125A67726F43E06007F74C4 /* HTML File */ = {
+			isa = PBXGroup;
+			children = (
+				3BBB879826F18C2C00AF3965 /* vehicleInsurance.html */,
+			);
+			path = "HTML File";
+			sourceTree = "<group>";
+		};
+		E125A67826F43E2B007F74C4 /* JSON File */ = {
+			isa = PBXGroup;
+			children = (
+				3B7749CE26D34D6100FB85A4 /* UserDetailsJSONFormat.geojson */,
+			);
+			path = "JSON File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,17 +578,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B5FCFF726E5A00D00138B1D /* DocumentsTableViewCell.swift in Sources */,
 				3B7749BC26CEBBA700FB85A4 /* TVSectionsModel.swift in Sources */,
 				3B80CF8326D57D02000590D8 /* ContactAgentCell.swift in Sources */,
 				3B5FCFFD26E5CED300138B1D /* DashboardTVCellModel.swift in Sources */,
-				3B5FCFEC26E46D0300138B1D /* PolicyDataProvider.swift in Sources */,
 				3B2030FA26DE913A003D78FE /* SpinnerView.swift in Sources */,
-				3B5FCFE926E4646700138B1D /* PolicyTVCellModel.swift in Sources */,
 				3B5FCFF926E5CE6F00138B1D /* DashboardViewModel.swift in Sources */,
 				3B7648F726CC956F00C0F52D /* ReuseableItemsExt.swift in Sources */,
 				3B7749D926D4136600FB85A4 /* ReportAndRequestCell.swift in Sources */,
-				3B5FCFE726E460DD00138B1D /* PolicyViewModel.swift in Sources */,
 				3B7749C126D0A97A00FB85A4 /* LoginNetworkManager.swift in Sources */,
 				3B5FCFFB26E5CE9B00138B1D /* DashboardDataProvider.swift in Sources */,
 				3B80CF7B26D498EA000590D8 /* UpcomingBillCell.swift in Sources */,
@@ -614,15 +594,11 @@
 				3BC4F05226DE79C500AC3F68 /* LoginViewModel.swift in Sources */,
 				3B80CF8126D52B94000590D8 /* MyCard.swift in Sources */,
 				3B7749D026D3DFC500FB85A4 /* TabBarController.swift in Sources */,
-				3B5FCFEE26E46DEE00138B1D /* PolicyData.swift in Sources */,
 				3B7749C326D0B12D00FB85A4 /* LoginModel.swift in Sources */,
-				3BF7F52326D7209C00A18383 /* PolicyVC.swift in Sources */,
 				3B7749D226D3E9D200FB85A4 /* DashboardVC.swift in Sources */,
 				3B80CF7D26D4B318000590D8 /* MyCardCell.swift in Sources */,
 				3BF7F51F26D71F8000A18383 /* LinkedInVC.swift in Sources */,
 				03B8610E26C1E47700DAC12A /* AppDelegate.swift in Sources */,
-				3B12377926D7448B005B8D7C /* AutoCell.swift in Sources */,
-				3B12377B26D75080005B8D7C /* HomeAndRentalCell.swift in Sources */,
 				3B5FCFFF26E5D0A200138B1D /* DashboardData.swift in Sources */,
 				03B8611026C1E47700DAC12A /* SceneDelegate.swift in Sources */,
 				3B12378126D7FFE4005B8D7C /* LinkedInCell.swift in Sources */,

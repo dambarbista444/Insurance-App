@@ -11,4 +11,6 @@ Pod::Spec.new do |spec|
   spec.resources = '**/*.{xib,png,json,xcassets}'
   spec.dependency 'SnapKit', '~> 5.0.0'
   spec.dependency 'TableViewReuseableCell'
+  spec.dependency 'Profile'
+  
 end

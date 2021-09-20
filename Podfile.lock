@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.4.3)
   - PopUp (0.1.0):
+    - Profile
     - SnapKit (~> 5.0.0)
     - TableViewReuseableCell
   - Profile (0.1.0):
@@ -55,7 +56,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  PopUp: 8b7551d6e32f9251ee0cb809f8a3a7dd539fa120
+  PopUp: f55b3f346de81f5516a4f212504465d4c8d01541
   Profile: 4497c390ac9e44137f27237c070dbaf836e327e4
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   Quotes: bb572cd1832aa1498f59e5265b3c74dd7ee58f36
@@ -65,4 +66,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 745d0c94dd836fad8f939317762de062210a5def
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.2

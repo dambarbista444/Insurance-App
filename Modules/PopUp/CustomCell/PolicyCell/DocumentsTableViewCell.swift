@@ -80,7 +80,7 @@ class DocumentsTableViewCell: UITableViewCell {
 
 // MARK:- Protocols
 
-protocol DocumentsTableViewCellConfigurable {
+public protocol DocumentsTableViewCellConfigurable {
     var documentsItems: DocumentsItems? {get}
 }
 

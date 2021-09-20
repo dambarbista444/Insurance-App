@@ -8,5 +8,5 @@
 import Foundation
 
 public struct PopoutData {
-    let vehicleInsuraceDetails: VehicleInsuranceQuotesDetails?
+    let autoInsuraceDetails: autoInsuranceQuotesDetails?
 }

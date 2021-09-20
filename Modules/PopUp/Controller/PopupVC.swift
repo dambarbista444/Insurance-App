@@ -11,7 +11,6 @@ import TableViewReuseableCell
 
 public class PopupVC: UIViewController {
     
-    
     private let viewModel: PopupViewConfigurable
     
     public init(viewModel: PopupViewConfigurable) {
@@ -23,9 +22,11 @@ public class PopupVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let PopupTableView: UITableView = {
+    
+     let PopupTableView: UITableView = {
         let tableView = UITableView()
-        tableView.registerCell(cellType: PopupTableViewCell.self)
+        tableView.registerCell(cellType: AutoInsuranceQuotesDetailsTableViewCell.self)
+        tableView.registerCell(cellType: AutoDetailsTableViewCell.self)
         tableView.layer.cornerRadius = 15
         tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
@@ -34,7 +35,6 @@ public class PopupVC: UIViewController {
     }()
     
    
-    
     public override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
@@ -42,13 +42,11 @@ public class PopupVC: UIViewController {
         PopupTableView.delegate = self
         PopupTableView.dataSource = self
         view.backgroundColor = .clear
-        
     }
     
     
     private func addViews() {
         self.view.addSubview(PopupTableView)
-        
     }
     
 
@@ -60,8 +58,6 @@ public class PopupVC: UIViewController {
             $0.bottom.equalTo(view.snp.bottom).offset(-100)
         }
     }
-    
-    
 }
 
 
@@ -77,15 +73,19 @@ extension PopupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let row = viewModel.row(for: indexPath) else { return UITableViewCell() }
-        
-        switch row {
-        case .vehicleInsuranceQuotes(_):
-            let cell: PopupTableViewCell = tableView.cell(for: indexPath)
-            return cell
-        
-        }
+   
+            guard let row = viewModel.row(for: indexPath) else { return UITableViewCell() }
+       
+            switch row {
+            case .autoInsuranceQuotesDetailsRow(_):
+               
+                    let cell: AutoInsuranceQuotesDetailsTableViewCell = tableView.cell(for: indexPath)
+                    return cell
+                
+            case .autoDetailsRow(_):
+                let cell: AutoDetailsTableViewCell = PopupTableView.cell(for: indexPath)
+                return cell
+            }
     }
     
     
@@ -97,7 +97,7 @@ extension PopupVC: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerTitleLabel = UILabel(frame: CGRect(x: 0, y: 5, width: PopupTableView.frame.width, height: 40))
-        headerTitleLabel.text = "How it works"
+        headerTitleLabel.text = viewModel.titleForHeader
         headerTitleLabel.font = .boldSystemFont(ofSize: 18)
         headerTitleLabel.textAlignment = .center
         
@@ -122,16 +122,23 @@ extension PopupVC: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        let okayButton = UIButton()
-        okayButton.setTitle("OK", for: .normal)
-        okayButton.backgroundColor = .black
-        okayButton.layer.cornerRadius = 15
+        let dismissPopoutButton = UIButton()
+        dismissPopoutButton.setTitle(viewModel.titleForButton, for: .normal)
+        dismissPopoutButton.backgroundColor = .black
+        dismissPopoutButton.layer.cornerRadius = 15
+        //dismissPopoutButton.addTarget(self, action: #selector(dismissPopout), for: .touchUpInside)
+        
+        if #available(iOS 14.0, *) {
+            dismissPopoutButton.addAction(viewModel.popoutButtonAction(vc: self), for: .touchUpInside)
+        } else {
+            // Fallback on earlier versions
+        }
         
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: PopupTableView.frame.width, height: 80))
-        footerView.addSubview(okayButton)
+        footerView.addSubview(dismissPopoutButton)
         
         /// SetupButtonView
-        okayButton.snp.makeConstraints {
+        dismissPopoutButton.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(40)
             $0.top.equalTo(footerView.snp.top).offset(20)
             $0.height.equalTo(40)
@@ -141,11 +148,13 @@ extension PopupVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    
-    
-    
+   @objc func dismissPopout() {
+        dismiss(animated: true, completion: nil)
+    }
     
     
 }
+
+
 
 

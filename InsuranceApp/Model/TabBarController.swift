@@ -8,6 +8,7 @@
 import UIKit
 import Profile
 import Quotes
+import PopUp
 
 
 
@@ -15,9 +16,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpTabsbarControllers()
-    
     }
     
     

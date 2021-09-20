@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PolicyData {
+public struct PolicyData {
     let autoOneItems: AutoItems?
     let autoTwoItems: AutoItems?
     let homeAndRentalItems: HomeAndRentalItems?
