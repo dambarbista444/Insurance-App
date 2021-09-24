@@ -75,7 +75,7 @@ class MyQuotesTableViewCell: UITableViewCell {
         
         guard let myQuotesItems = ViewModel.myQuotesItems else { return }
         myQuotesLabel.text = myQuotesItems.quotesItems
-        forwardArrowImageView.image = myQuotesItems.arrowImage
+       forwardArrowImageView.image = myQuotesItems.arrowImage
     }
 
 }

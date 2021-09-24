@@ -47,7 +47,19 @@
 		349E84631D749D93BD6F36F269D5527C /* PolicyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22685157231387C42701410D607854A /* PolicyData.swift */; };
 		37007A675B32129003CB86BBE7F267BC /* TableViewReuseableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A143E55543D9C5590E547B2190081DB8 /* TableViewReuseableCell-dummy.m */; };
 		381FF05F8B4F611EE9C2FDBE4457BB89 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75DFC7B8224F64BA3BB54513060F50E /* SessionDelegate.swift */; };
+		3B400CAB26FC0D28002A2302 /* SchedulePaymentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B400CAA26FC0D28002A2302 /* SchedulePaymentsTableViewCell.swift */; };
+		3B400CAD26FC0F5E002A2302 /* SchedulePaymentsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B400CAC26FC0F5E002A2302 /* SchedulePaymentsItems.swift */; };
+		3B400CB026FC11B4002A2302 /* SchedulePaymentDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B400CAF26FC11B4002A2302 /* SchedulePaymentDataProvider.swift */; };
 		3B83FC3726F5708C0025C9DC /* AutoDetailsPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83FC3626F5708C0025C9DC /* AutoDetailsPopupViewModel.swift */; };
+		3BFD657626FA1B680081BD05 /* RequestQuotesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD657526FA1B680081BD05 /* RequestQuotesDetailsVC.swift */; };
+		3BFD657826FA441A0081BD05 /* EstimatedQuotesPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD657726FA441A0081BD05 /* EstimatedQuotesPriceTableViewCell.swift */; };
+		3BFD657B26FA4C250081BD05 /* RequestQuotesDetaisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD657A26FA4C250081BD05 /* RequestQuotesDetaisViewModel.swift */; };
+		3BFD657D26FAA9C70081BD05 /* ManageMyBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD657C26FAA9C70081BD05 /* ManageMyBillTableViewCell.swift */; };
+		3BFD658126FAB0D60081BD05 /* RequestQuotesDetailsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD658026FAB0D60081BD05 /* RequestQuotesDetailsDataModel.swift */; };
+		3BFD658326FAB1EC0081BD05 /* ManageMyBillDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD658226FAB1EC0081BD05 /* ManageMyBillDataProvider.swift */; };
+		3BFD658826FBA3A80081BD05 /* ChangePaymentPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD658726FBA3A80081BD05 /* ChangePaymentPlanVC.swift */; };
+		3BFD658A26FBB5D70081BD05 /* SelectNewPaymentPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD658926FBB5D70081BD05 /* SelectNewPaymentPlanTableViewCell.swift */; };
+		3BFD658F26FBB85C0081BD05 /* ChangeMyPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD658E26FBB85C0081BD05 /* ChangeMyPlanViewModel.swift */; };
 		3F2438947AB03ECD4B6337D9AADFB26C /* Quotes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C71755A1EF7BBE739B21B5A475FCE4 /* Quotes-dummy.m */; };
 		405EF7F7C5879BB96FC7848438E18C67 /* PolicyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4D633C9F5DD8D2B56D96D611195E2 /* PolicyViewModel.swift */; };
 		412A0382D7BE47AD6211BD595C867CA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99ADE930E4F9D80373E6B856900F52D3 /* Foundation.framework */; };
@@ -99,7 +111,6 @@
 		72EC2712926E6D28B52360D9AC41668F /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CDECE6A09763280CAD873C7018109D /* AlamofireExtended.swift */; };
 		7593922EE01DB76D2FDD4D77F1579CB5 /* PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0BE2F3EE09985A3B7ADD1B8E5C166 /* PromiseKit-dummy.m */; };
 		77781D1AAC11F2AD22CF5A318F9B3E97 /* QuotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9BF7B222183B16E8C70025C838F029 /* QuotesVC.swift */; };
-		79A77A3D009EF0209A7C0900E49254A8 /* QuotesTVCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74AA009851F778FBC5F972D294620C /* QuotesTVCellModel.swift */; };
 		79E5F8C20EF1A689FD513610C9D2D57A /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE22252FCE0BBE3DEB7ACF9BD66943 /* ConstraintMakerRelatable.swift */; };
 		7D3DD4A8BB36733BA15868F7FB8C56CE /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6AD439FDFB4EE349048A0110BDF7F38 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		885C077C94CD93EAA02C5419E05F1DF1 /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FC98EA3427CC0E3673CFCB9A1A8AF00 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -204,7 +215,7 @@
 		FBC84A493996C832F5F811F61235EA53 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484A19052968CA5FCF539486883B542 /* ConstraintConstantTarget.swift */; };
 		FBE4578C9265C801C71C421A285514D5 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551C9AB801D54C004D71CA38CF8313E /* ConstraintInsetTarget.swift */; };
 		FE374665737733E690EB7AB4811A48DC /* NSTask+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD28F237C39F69A25F6D7FE8A37CB02 /* NSTask+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF643A6C04EFA7E95BF8DF68D23FBBA2 /* QuotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD7BFDD33D07F233DF345EEA2B332B9 /* QuotesData.swift */; };
+		FF643A6C04EFA7E95BF8DF68D23FBBA2 /* QuotesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD7BFDD33D07F233DF345EEA2B332B9 /* QuotesDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,7 +437,6 @@
 		1B80A6525F69BE3B00614D090F544AB2 /* Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InsuranceApp-InsuranceAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1B9BF7B222183B16E8C70025C838F029 /* QuotesVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuotesVC.swift; sourceTree = "<group>"; };
 		1BFBF9A14880460418FEB292752B426B /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		1C74AA009851F778FBC5F972D294620C /* QuotesTVCellModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuotesTVCellModel.swift; sourceTree = "<group>"; };
 		1CC7965CD34E11103D5A9E05F18E986E /* PopUp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PopUp-Info.plist"; sourceTree = "<group>"; };
 		1CF0A8232BFC3A48E1AACCA3F4013173 /* HomeAndRentalCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomeAndRentalCell.swift; sourceTree = "<group>"; };
 		1CFA2C7F2F82F6663CC7194569725D9A /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
@@ -453,7 +463,19 @@
 		38CDECE6A09763280CAD873C7018109D /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		393CE78156C9BAC75C948402B8289142 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
 		3A8DF074184519041D85881C57CC34EC /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
+		3B400CAA26FC0D28002A2302 /* SchedulePaymentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePaymentsTableViewCell.swift; sourceTree = "<group>"; };
+		3B400CAC26FC0F5E002A2302 /* SchedulePaymentsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePaymentsItems.swift; sourceTree = "<group>"; };
+		3B400CAF26FC11B4002A2302 /* SchedulePaymentDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePaymentDataProvider.swift; sourceTree = "<group>"; };
 		3B83FC3626F5708C0025C9DC /* AutoDetailsPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDetailsPopupViewModel.swift; sourceTree = "<group>"; };
+		3BFD657526FA1B680081BD05 /* RequestQuotesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestQuotesDetailsVC.swift; sourceTree = "<group>"; };
+		3BFD657726FA441A0081BD05 /* EstimatedQuotesPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedQuotesPriceTableViewCell.swift; sourceTree = "<group>"; };
+		3BFD657A26FA4C250081BD05 /* RequestQuotesDetaisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestQuotesDetaisViewModel.swift; sourceTree = "<group>"; };
+		3BFD657C26FAA9C70081BD05 /* ManageMyBillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyBillTableViewCell.swift; sourceTree = "<group>"; };
+		3BFD658026FAB0D60081BD05 /* RequestQuotesDetailsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestQuotesDetailsDataModel.swift; sourceTree = "<group>"; };
+		3BFD658226FAB1EC0081BD05 /* ManageMyBillDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyBillDataProvider.swift; sourceTree = "<group>"; };
+		3BFD658726FBA3A80081BD05 /* ChangePaymentPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePaymentPlanVC.swift; sourceTree = "<group>"; };
+		3BFD658926FBB5D70081BD05 /* SelectNewPaymentPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNewPaymentPlanTableViewCell.swift; sourceTree = "<group>"; };
+		3BFD658E26FBB85C0081BD05 /* ChangeMyPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMyPlanViewModel.swift; sourceTree = "<group>"; };
 		3CA0BE2F3EE09985A3B7ADD1B8E5C166 /* PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-dummy.m"; sourceTree = "<group>"; };
 		3CEAA5A2B578A78D9794580C7C7850B9 /* PolicyTVCellModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PolicyTVCellModel.swift; sourceTree = "<group>"; };
 		3D70BBBFAA35CEF382F307C919108D7D /* QuotesDetailsTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuotesDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -487,7 +509,7 @@
 		5670D1FC14AE3BFFA5F4E0B98900E6A4 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		5A113171531F5BFA048D96F89B012321 /* Pods-InsuranceApp-InsuranceAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InsuranceApp-InsuranceAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A737BC0E7AE295128B43380EEB09134 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		5CD7BFDD33D07F233DF345EEA2B332B9 /* QuotesData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuotesData.swift; sourceTree = "<group>"; };
+		5CD7BFDD33D07F233DF345EEA2B332B9 /* QuotesDataModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuotesDataModel.swift; sourceTree = "<group>"; };
 		5D15E0F537F6975574C4475F43548DFF /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		5D181A8B1043DD82B61C1780F814F746 /* PopUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5AAC214CE66FD9A000FEEB21538B65 /* PopUp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PopUp-dummy.m"; sourceTree = "<group>"; };
@@ -806,6 +828,69 @@
 			path = "../Target Support Files/SnapKit";
 			sourceTree = "<group>";
 		};
+		3B400CAE26FC0F72002A2302 /* ChangePaymentPlanDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B400CAC26FC0F5E002A2302 /* SchedulePaymentsItems.swift */,
+			);
+			path = ChangePaymentPlanDataModel;
+			sourceTree = "<group>";
+		};
+		3BFD657926FA4A760081BD05 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FCCF85B18C099D8BD488AE8EC43234B /* QuotesViewModel.swift */,
+				3BFD657A26FA4C250081BD05 /* RequestQuotesDetaisViewModel.swift */,
+				3BFD658E26FBB85C0081BD05 /* ChangeMyPlanViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3BFD658526FB8C880081BD05 /* QuotesDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CD7BFDD33D07F233DF345EEA2B332B9 /* QuotesDataModel.swift */,
+			);
+			path = QuotesDataModel;
+			sourceTree = "<group>";
+		};
+		3BFD658626FB8CC30081BD05 /* RequestQuotesDetailsDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BFD658026FAB0D60081BD05 /* RequestQuotesDetailsDataModel.swift */,
+			);
+			path = RequestQuotesDetailsDataModel;
+			sourceTree = "<group>";
+		};
+		3BFD658B26FBB61D0081BD05 /* QuotesCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D70BBBFAA35CEF382F307C919108D7D /* QuotesDetailsTableViewCell.swift */,
+				19D97CAB5F0585C4C261DD464B499576 /* RequestQuoteCollectionViewCell.swift */,
+				BE96E4EB01966EDE3F6129E86EE0E8F5 /* MyQuotesTableViewCell.swift */,
+				2495B7FD8A7DA70D5DE13C5ADFCF9B48 /* RequestQuoteTableViewCell.swift */,
+			);
+			path = QuotesCell;
+			sourceTree = "<group>";
+		};
+		3BFD658C26FBB6500081BD05 /* RequestQuotesDetailsCell */ = {
+			isa = PBXGroup;
+			children = (
+				3BFD657726FA441A0081BD05 /* EstimatedQuotesPriceTableViewCell.swift */,
+				3BFD657C26FAA9C70081BD05 /* ManageMyBillTableViewCell.swift */,
+			);
+			path = RequestQuotesDetailsCell;
+			sourceTree = "<group>";
+		};
+		3BFD658D26FBB67D0081BD05 /* ChangePaymentPlanCell */ = {
+			isa = PBXGroup;
+			children = (
+				3BFD658926FBB5D70081BD05 /* SelectNewPaymentPlanTableViewCell.swift */,
+				3B400CAA26FC0D28002A2302 /* SchedulePaymentsTableViewCell.swift */,
+			);
+			path = ChangePaymentPlanCell;
+			sourceTree = "<group>";
+		};
 		3EDEC4E67CB53170D48720A7EEFD3A14 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,6 +1177,8 @@
 			isa = PBXGroup;
 			children = (
 				1B9BF7B222183B16E8C70025C838F029 /* QuotesVC.swift */,
+				3BFD657526FA1B680081BD05 /* RequestQuotesDetailsVC.swift */,
+				3BFD658726FBA3A80081BD05 /* ChangePaymentPlanVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1241,9 +1328,9 @@
 		DC2B2C1411106ABA8A052E9DF2881580 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5CD7BFDD33D07F233DF345EEA2B332B9 /* QuotesData.swift */,
-				1C74AA009851F778FBC5F972D294620C /* QuotesTVCellModel.swift */,
-				5FCCF85B18C099D8BD488AE8EC43234B /* QuotesViewModel.swift */,
+				3BFD658526FB8C880081BD05 /* QuotesDataModel */,
+				3BFD658626FB8CC30081BD05 /* RequestQuotesDetailsDataModel */,
+				3B400CAE26FC0F72002A2302 /* ChangePaymentPlanDataModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1319,10 +1406,9 @@
 		E99FD48217A92510782A86ACC4699250 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				BE96E4EB01966EDE3F6129E86EE0E8F5 /* MyQuotesTableViewCell.swift */,
-				3D70BBBFAA35CEF382F307C919108D7D /* QuotesDetailsTableViewCell.swift */,
-				19D97CAB5F0585C4C261DD464B499576 /* RequestQuoteCollectionViewCell.swift */,
-				2495B7FD8A7DA70D5DE13C5ADFCF9B48 /* RequestQuoteTableViewCell.swift */,
+				3BFD658B26FBB61D0081BD05 /* QuotesCell */,
+				3BFD658C26FBB6500081BD05 /* RequestQuotesDetailsCell */,
+				3BFD658D26FBB67D0081BD05 /* ChangePaymentPlanCell */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -1378,6 +1464,8 @@
 			isa = PBXGroup;
 			children = (
 				EF41127FABAD86DF7D68E51B1FB39FB7 /* QuotesDataProvider.swift */,
+				3BFD658226FAB1EC0081BD05 /* ManageMyBillDataProvider.swift */,
+				3B400CAF26FC11B4002A2302 /* SchedulePaymentDataProvider.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -1388,6 +1476,7 @@
 				A4BB4E59D06730250BB1197087EA3D7C /* Controller */,
 				E99FD48217A92510782A86ACC4699250 /* CustomCell */,
 				F1EABC930F7200FB8DDA59F7FD12C870 /* DataProvider */,
+				3BFD657926FA4A760081BD05 /* ViewModel */,
 				DC2B2C1411106ABA8A052E9DF2881580 /* Model */,
 				4FF9A47109A98E64A150108B03817067 /* Pod */,
 				829BD738B0866F276FD9A26A55F7285B /* Support Files */,
@@ -2027,13 +2116,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFD658326FAB1EC0081BD05 /* ManageMyBillDataProvider.swift in Sources */,
 				2A1B7EC86A5607E69298ABAA02988502 /* MyQuotesTableViewCell.swift in Sources */,
+				3BFD657826FA441A0081BD05 /* EstimatedQuotesPriceTableViewCell.swift in Sources */,
 				3F2438947AB03ECD4B6337D9AADFB26C /* Quotes-dummy.m in Sources */,
-				FF643A6C04EFA7E95BF8DF68D23FBBA2 /* QuotesData.swift in Sources */,
+				3B400CAB26FC0D28002A2302 /* SchedulePaymentsTableViewCell.swift in Sources */,
+				FF643A6C04EFA7E95BF8DF68D23FBBA2 /* QuotesDataModel.swift in Sources */,
 				1B2B7EC91A0D02EC2BA487E0134259AA /* QuotesDataProvider.swift in Sources */,
+				3BFD657D26FAA9C70081BD05 /* ManageMyBillTableViewCell.swift in Sources */,
 				4C4875301FDE4C6F68995CA46ED4F243 /* QuotesDetailsTableViewCell.swift in Sources */,
-				79A77A3D009EF0209A7C0900E49254A8 /* QuotesTVCellModel.swift in Sources */,
+				3BFD657B26FA4C250081BD05 /* RequestQuotesDetaisViewModel.swift in Sources */,
+				3B400CAD26FC0F5E002A2302 /* SchedulePaymentsItems.swift in Sources */,
+				3BFD658A26FBB5D70081BD05 /* SelectNewPaymentPlanTableViewCell.swift in Sources */,
 				77781D1AAC11F2AD22CF5A318F9B3E97 /* QuotesVC.swift in Sources */,
+				3BFD658F26FBB85C0081BD05 /* ChangeMyPlanViewModel.swift in Sources */,
+				3BFD658126FAB0D60081BD05 /* RequestQuotesDetailsDataModel.swift in Sources */,
+				3B400CB026FC11B4002A2302 /* SchedulePaymentDataProvider.swift in Sources */,
+				3BFD657626FA1B680081BD05 /* RequestQuotesDetailsVC.swift in Sources */,
+				3BFD658826FBA3A80081BD05 /* ChangePaymentPlanVC.swift in Sources */,
 				A70D9DE01AB721C559FBEE55A238A268 /* QuotesViewModel.swift in Sources */,
 				98EB5161CC62F13382D6BA9679CE4092 /* RequestQuoteCollectionViewCell.swift in Sources */,
 				524EA90760FF771E34BC8F67D99E4EDA /* RequestQuoteTableViewCell.swift in Sources */,
@@ -2314,7 +2414,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Quotes/Quotes-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Quotes/Quotes-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2834,7 +2934,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Quotes/Quotes-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Quotes/Quotes-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

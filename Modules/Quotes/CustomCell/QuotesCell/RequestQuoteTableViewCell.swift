@@ -37,6 +37,10 @@ class RequestQuoteTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         collectionView.dataSource = self
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     private func addViews() {
         contentView.addSubview(collectionView)
@@ -53,11 +57,7 @@ class RequestQuoteTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         }
     }
     
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+   
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
@@ -99,6 +99,14 @@ class RequestQuoteTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
         }
         
         return edgeInset
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1, indexPath.row == 0 {
+            NotificationCenter.default.post(name: Notification.Name("popUpRequestQuotesDetailsVC"), object: nil)
+            
+        }
     }
     
 }

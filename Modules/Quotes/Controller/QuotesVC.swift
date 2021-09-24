@@ -12,11 +12,11 @@ import PopUp
 import TableViewReuseableCell
 
 public class QuotesVC: UIViewController {
-   
+    
     let navigationBar: UINavigationBar = {
         
         let navBarWidth = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 25, width: navBarWidth.width, height: 40))
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 35, width: navBarWidth.width, height: 40))
         let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(navigateToProfileVC))
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward.circle"), style: .plain, target: self, action: nil)
         let navItem = UINavigationItem(title: "QUOTES")
@@ -40,12 +40,12 @@ public class QuotesVC: UIViewController {
     
     
     private let viewModel: QuotesViewConfigurable
-
+    
     public init(viewModel: QuotesViewConfigurable) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -53,21 +53,29 @@ public class QuotesVC: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .white
         addViews()
         setUpConstraints()
         quotesTableViewCell.delegate = self
         quotesTableViewCell.dataSource = self
-        /// Receiving notificaton to perform action: action is to pop up QuotesDetailsVC to display more details content: action from:  QuotesDetailsTableViewCell
-        NotificationCenter.default.addObserver(self, selector: #selector(popUpShowMoreDetails(_:)), name: Notification.Name("popUpQuotesDetailsVC"), object: nil)
+        notificationObserver()
     }
     
-  
+    
     private func addViews() {
         
-        self.view.addSubview(navigationBar)
-        self.view.addSubview(quotesTableViewCell)
+        view.addSubview(navigationBar)
+        view.addSubview(quotesTableViewCell)
+    }
+    
+    /// Receiving notificaton to perform action: action is to pop up view controller to display more details content:
+    private func notificationObserver() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(popUpShowMoreDetails(_:)), name: Notification.Name("popUpQuotesDetailsVC"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(popUpRequestQuotesDetailsVC(_:)), name: Notification.Name("popUpRequestQuotesDetailsVC"), object: nil)
+        
     }
     
     
@@ -82,6 +90,7 @@ public class QuotesVC: UIViewController {
         }
     }
     
+    
     /// this method will pop up showMoreDetailsVC to display more content
     /// After receiving  notification from QuotesDetailsTableViewCell method called showMoredetails()
     @objc private func popUpShowMoreDetails(_ notification: Notification) {
@@ -89,6 +98,14 @@ public class QuotesVC: UIViewController {
         let showMoreDetailsVC = PopupVC(viewModel: HowItworksViewModel())
         
         present(showMoreDetailsVC, animated: false, completion: nil)
+    }
+    
+    
+    @objc private func popUpRequestQuotesDetailsVC(_ notification: Notification) {
+        
+        let requestQuotesDetailsVC = RequestQuotesDetailsVC(viewModel: RequestQuotesViewModel())
+        requestQuotesDetailsVC.modalPresentationStyle = .fullScreen
+        present(requestQuotesDetailsVC, animated: true, completion: nil)
     }
     
     
@@ -102,6 +119,8 @@ public class QuotesVC: UIViewController {
 }
 
 
+// MARK:- TableView Delegate And DataSource
+
 extension QuotesVC: UITableViewDelegate, UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -114,7 +133,7 @@ extension QuotesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   
+        
         guard let  row = viewModel.row(for: indexPath) else {return UITableViewCell()}
         
         switch row {
@@ -146,10 +165,10 @@ extension QuotesVC: UITableViewDelegate, UITableViewDataSource {
         headerTitleLabel.text = sectionTitles[section]
         headerTitleLabel.font = .systemFont(ofSize: 20)
         headerTitleLabel.textAlignment = .center
-
+        
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: headerTitleWidth, height: 40))
         headerView.addSubview(headerTitleLabel)
-
+        
         return headerView
     }
     

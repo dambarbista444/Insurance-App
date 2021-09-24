@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import PromiseKit
 import SnapKit
+import Quotes
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
@@ -80,7 +81,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     // MARK:- Add Views
     
     private func addViews() {
-        
         self.view.addSubview(loginStackView)
     }
     
@@ -128,6 +128,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         let tabBarController = TabBarController()
         tabBarController.modalPresentationStyle = .fullScreen
         self .navigationController?.pushViewController(tabBarController, animated: true)
+        
+        /// This is just using to speed up workflow by navigating to directly to working Screen.
+//        let changePaymentPlanVC = ChangePaymentPlanVC(viewModel: ChangePaymentPlanViewModel())
+//        changePaymentPlanVC.modalPresentationStyle = .fullScreen
+//        present(changePaymentPlanVC, animated: true, completion: nil)
+
+        
     }
 }
 

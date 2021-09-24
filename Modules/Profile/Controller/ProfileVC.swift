@@ -128,7 +128,7 @@ public class ProfileVC: UIViewController {
       }
       
       /// This method willl navigate to tab bar controller
-      @objc  private func navigateToTabBarController() {
+      @objc private func navigateToTabBarController() {
         
         dismiss(animated: true, completion: nil)
       }
