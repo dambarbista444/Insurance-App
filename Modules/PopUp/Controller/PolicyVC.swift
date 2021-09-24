@@ -15,7 +15,7 @@ public class PolicyVC: UIViewController {
     let navigationBar: UINavigationBar = {
         
         let navBarWidth = UIScreen.main.bounds
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 25, width: navBarWidth.width, height: 40))
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 35, width: navBarWidth.width, height: 40))
         
         let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(navigateToProfileVC))
         
@@ -83,7 +83,7 @@ public class PolicyVC: UIViewController {
         
         let profileVC = ProfileVC()
         profileVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(profileVC, animated: true)
+        present(profileVC, animated: true)
     }
 }
 
